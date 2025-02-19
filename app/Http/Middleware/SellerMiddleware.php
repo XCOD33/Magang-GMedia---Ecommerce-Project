@@ -22,6 +22,6 @@ class SellerMiddleware
             return $next($request);
         }
 
-        return redirect('/')->with('error', 'Anda tidak memiliki akses ke halaman ini');
+        return redirect('/')->withErrors('You are not allowed to access this page');
     }
 }

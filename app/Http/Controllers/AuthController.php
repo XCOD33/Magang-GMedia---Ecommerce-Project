@@ -42,7 +42,7 @@ class AuthController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Login berhasil',
-                'redirect' => route('dashboard'),
+                'redirect' => route('dashboard.index'),
             ]);
         }
 

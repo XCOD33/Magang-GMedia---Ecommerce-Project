@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::group([
@@ -25,16 +26,35 @@ Route::group([
     Route::group([
         'prefix' => 'data-master',
         'as' => 'data-master.',
-        'middleware' => ['auth', 'superadmin'],
+        'middleware' => ['superadmin'],
     ], function () {
-        //
+        Route::group([
+            'prefix' => 'user',
+            'as' => 'user.',
+            'controller' => UserController::class,
+        ], function () {
+            Route::get('/', 'index')->name('index');
+            Route::get('/create', 'create')->name('create');
+            Route::post('/store', 'store')->name('store');
+            Route::get('/edit/{id}', 'edit')->name('edit');
+            Route::put('/update/{id}', 'update')->name('update');
+            Route::delete('/delete/{id}', 'delete')->name('delete');
+        });
     });
 
     Route::group([
         'prefix' => 'seller',
         'as' => 'seller.',
-        'middleware' => ['auth', 'seller'],
+        'middleware' => ['seller'],
     ], function () {
         //
     });
+});
+
+Route::group([
+    'prefix' => 'data-table',
+    'as' => 'data-table.',
+    'middleware' => ['auth'],
+], function () {
+    Route::get('/user', [UserController::class, 'dataTable'])->name('user');
 });
