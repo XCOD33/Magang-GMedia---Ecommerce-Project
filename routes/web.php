@@ -1,19 +1,27 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 Route::group([
-    'prefix' => 'auth',
-    'as' => 'auth.',
+    'controller' => AuthController::class,
     'middleware' => ['guest'],
 ], function () {
-    //
+    Route::get('/auth', 'showAuthForm')->name('auth');
+    Route::post('/login', 'login')->name('login');
+
+    Route::post('/register', 'register')->name('register');
 });
 
 Route::group([
     'prefix' => 'dashboard',
     'as' => 'dashboard.',
+    'middleware' => ['auth'],
 ], function () {
+    Route::get('/', function () {
+        return 'Dashboard';
+    })->name('index');
+
     Route::group([
         'prefix' => 'data-master',
         'as' => 'data-master.',
