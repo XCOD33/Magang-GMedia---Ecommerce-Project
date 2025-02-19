@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "626b9e7ddd47fb7eff9aaa53cce0c9ad",
+    "content-hash": "d7112bf1842e9332aa804af3b9ab644f",
     "packages": [
         {
             "name": "brick/math",
@@ -2378,6 +2378,60 @@
                 }
             ],
             "time": "2024-11-21T10:39:51+00:00"
+        },
+        {
+            "name": "parables/laravel-cuid2",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Parables/laravel-cuid2.git",
+                "reference": "cfc7d577ecba22793a24660bd7793204fa1bc6da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Parables/laravel-cuid2/zipball/cfc7d577ecba22793a24660bd7793204fa1bc6da",
+                "reference": "cfc7d577ecba22793a24660bd7793204fa1bc6da",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^10.0|^11.0",
+                "illuminate/events": "^10.0|^11.0",
+                "illuminate/support": "^10.0|^11.0",
+                "php": "^8.1",
+                "visus/cuid2": "^4.0"
+            },
+            "require-dev": {
+                "laravel/legacy-factories": "^1.0.4",
+                "marcocesarato/php-conventional-changelog": "^1.17",
+                "orchestra/testbench": "^6.0|^7.0",
+                "phpunit/phpunit": "^9.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Parables\\Cuid\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Parables Boltnoel",
+                    "email": "parables95@gmail.com",
+                    "homepage": "https://github.com/parables"
+                }
+            ],
+            "description": "This package allows you to easily work with Cuid2 in your Laravel models.",
+            "keywords": [
+                "cuid",
+                "cuid2",
+                "eloquent",
+                "laravel",
+                "model"
+            ],
+            "time": "2024-05-26T04:08:47+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -5317,6 +5371,60 @@
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
             "time": "2024-12-21T16:25:41+00:00"
+        },
+        {
+            "name": "visus/cuid2",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/visus-io/php-cuid2.git",
+                "reference": "17c9b3098d556bb2556a084c948211333cc19c79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/visus-io/php-cuid2/zipball/17c9b3098d556bb2556a084c948211333cc19c79",
+                "reference": "17c9b3098d556bb2556a084c948211333cc19c79",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "ergebnis/composer-normalize": "^2.29",
+                "ext-ctype": "*",
+                "phpstan/phpstan": "^1.9",
+                "phpunit/phpunit": "^10.0",
+                "squizlabs/php_codesniffer": "^3.7",
+                "vimeo/psalm": "^5.4"
+            },
+            "suggest": {
+                "ext-gmp": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/compat.php"
+                ],
+                "psr-4": {
+                    "Visus\\Cuid2\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alan Brault",
+                    "email": "alan.brault@visus.io"
+                }
+            ],
+            "description": "A PHP library for generating collision-resistant ids (CUIDs).",
+            "keywords": [
+                "cuid",
+                "identifier"
+            ],
+            "time": "2024-05-14T13:23:35+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
