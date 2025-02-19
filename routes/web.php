@@ -7,8 +7,10 @@ Route::group([
     'controller' => AuthController::class,
     'middleware' => ['guest'],
 ], function () {
-    Route::get('/login', 'showLoginForm')->name('login');
-    Route::post('/login', 'login')->name('login.post');
+    Route::get('/auth', 'showAuthForm')->name('auth');
+    Route::post('/login', 'login')->name('login');
+
+    Route::post('/register', 'register')->name('register');
 });
 
 Route::group([

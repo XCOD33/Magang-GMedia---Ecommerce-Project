@@ -59,8 +59,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <p class="text-muted font-weight-bold">Enter your email and password</p>
                             </div>
                             <!--begin::Form-->
-                            <form class="form">
-                                @csrf
+                            <form class="form" id="signin-form">
                                 <div class="form-group py-3 m-0">
                                     <input class="form-control h-auto border-0 px-0 placeholder-dark-75" type="Email"
                                         placeholder="Email" name="email" autocomplete="off" />
@@ -97,13 +96,13 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <p class="text-muted font-weight-bold">Enter your details to create your account</p>
                             </div>
                             <!--begin::Form-->
-                            <form class="form" novalidate="novalidate">
+                            <form class="form" id="signup-form">
                                 <div class="form-group py-3 m-0">
                                     <input class="form-control h-auto border-0 px-0 placeholder-dark-75" type="text"
                                         placeholder="Fullname" name="fullname" autocomplete="off" />
                                 </div>
                                 <div class="form-group py-3 border-top m-0">
-                                    <input class="form-control h-auto border-0 px-0 placeholder-dark-75" type="password"
+                                    <input class="form-control h-auto border-0 px-0 placeholder-dark-75" type="email"
                                         placeholder="Email" name="email" autocomplete="off" />
                                 </div>
                                 <div class="form-group py-3 border-top m-0">
@@ -113,6 +112,13 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="form-group py-3 border-top m-0">
                                     <input class="form-control h-auto border-0 px-0 placeholder-dark-75" type="password"
                                         placeholder="Confirm password" name="rpassword" autocomplete="off" />
+                                </div>
+                                <div class="form-group py-3 border-top m-0">
+                                    <select name="role" class="form-control h-auto border-0 px-0 placeholder-dark-75">
+                                        <option selected disabled>Pilih Role</option>
+                                        <option value="seller">Seller</option>
+                                        <option value="buyer">Buyer</option>
+                                    </select>
                                 </div>
                                 <div class="form-group mt-5">
                                     <label class="checkbox checkbox-outline">
@@ -224,42 +230,68 @@ License: You must have a valid license purchased only from themeforest(the above
                 e.preventDefault();
 
                 handleLogin()
-            })
+            });
+
+            $('#kt_login_signup_submit').click(function(e) {
+                e.preventDefault();
+
+                handleRegister()
+            });
         });
 
         function handleLogin() {
             let formData = {
-                email: $('input[name=email]').val(),
-                password: $('input[name=password]').val(),
-                remember: $('input[name=remember]').val(),
-                _token: $('input[name=_token]').val()
+                email: $('#signin-form input[name=email]').val(),
+                password: $('#signin-form input[name=password]').val(),
+                remember: $('#signin-form input[name=remember]').val(),
+                _token: "{{ csrf_token() }}"
             };
 
             $.ajax({
-                url: "{{ route('login.post') }}",
+                url: "{{ route('login') }}",
                 type: "POST",
                 data: formData,
                 success: function(response) {
                     if(response.success) {
                         toastr.success(response.message);
-                        window.location.href = response.redirect;
+                        setTimeout(() => {
+                            window.location.href = response.redirect;
+                        }, 5000);
                     } else {
                         toastr.warning(response.message);
                     }
                 },
                 error: function(xhr) {
                     let error = xhr.responseJSON;
-                    $('.alert').remove();
-                    let alert = `
-                        <div class="alert alert-custom alert-light-danger alert-dismissible fade show" role="alert">
-                            <div class="alert-text">${error.message}</div>
-                            <div class="alert-close">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">X</span>
-                                </button>
-                            </div>
-                        </div>`;
-                    $('.login-signin form').prepend(alert);
+                    toastr.warning(error.message);
+                }
+            });
+        }
+
+        function handleRegister() {
+            let formData = {
+                name: $('#signup-form input[name=fullname]').val(),
+                email: $('#signup-form input[name=email]').val(),
+                password: $('#signup-form input[name=password]').val(),
+                password_confirmation: $('#signup-form input[name=rpassword]').val(),
+                role: $('#signup-form select[name=role]').val(),
+                _token: "{{ csrf_token() }}"
+            }
+
+            $.ajax({
+                url: "{{ route('register') }}",
+                type: "POST",
+                data: formData,
+                success: function(response) {
+                    if(response.success) {
+                        toastr.success(response.message);
+                    } else {
+                        toastr.warning(response.message);
+                    }
+                },
+                error: function(xhr) {
+                    let error = xhr.responseJSON;
+                    toatstr.warning(error.message);
                 }
             });
         }
