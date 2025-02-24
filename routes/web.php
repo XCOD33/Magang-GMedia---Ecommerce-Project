@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VoucherController;
@@ -71,6 +72,20 @@ Route::group([
             Route::post('/delete/{id}', 'destroy')->name('delete');
         });
 
+        // dashboard/data-master/product-category
+        Route::group([
+            'prefix' => 'product-category',
+            'as' => 'product-category.',
+            'controller' => ProductCategoryController::class,
+        ], function () {
+            Route::get('/', 'index')->name('index');
+            Route::get('/create', 'create')->name('create');
+            Route::post('/store', 'store')->name('store');
+            Route::get('/edit/{id}', 'edit')->name('edit');
+            Route::post('/update/{id}', 'update')->name('update');
+            Route::post('/delete/{id}', 'destroy')->name('delete');
+        });
+
         // dashboard/data-master/voucher
         Route::group([
             'prefix' => 'voucher',
@@ -104,5 +119,16 @@ Route::group([
 ], function () {
     Route::get('/user', [UserController::class, 'dataTable'])->name('user');
     Route::get('/store', [StoreController::class, 'dataTable'])->name('store');
+    Route::get('/product-category', [ProductCategoryController::class, 'dataTable'])->name('product-category');
     Route::get('/voucher', [VoucherController::class, 'dataTable'])->name('voucher');
+});
+
+// category
+Route::group([
+    'prefix' => 'category',
+    'as' => 'category.',
+], function () {
+    Route::get('/{slug}', function () {
+        return 'Category';
+    })->name('index');
 });
