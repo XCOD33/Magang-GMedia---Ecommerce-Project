@@ -32,7 +32,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::8dIcIVPWWPTQv2Fs',
+            '_route' => 'generated::2soYXTzMweZ5K83l',
           ),
           1 => NULL,
           2 => 
@@ -52,7 +52,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::xImPKaLPa6x2mEmh',
+            '_route' => 'generated::bxzYh0gwdrP35OCB',
           ),
           1 => NULL,
           2 => 
@@ -91,7 +91,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Ttl6i4My9hlCwgH2',
+            '_route' => 'generated::ioHsn9TRBbTGSjpC',
           ),
           1 => NULL,
           2 => 
@@ -261,6 +261,65 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/dashboard/data-master/voucher' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dashboard.data-master.voucher.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/dashboard/data-master/voucher/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dashboard.data-master.voucher.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/dashboard/data-master/voucher/store' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dashboard.data-master.voucher.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/data-table/user' => 
       array (
         0 => 
@@ -281,10 +340,30 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/data-table/voucher' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'data-table.voucher',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
     ),
     2 => 
     array (
-      0 => '{^(?|/livewire/preview\\-file/([^/]++)(*:39)|/dashboard/data\\-master/user/(?|edit/([^/]++)(*:91)|update/([^/]++)(*:113)|delete/([^/]++)(*:136))|/storage/(.*)(*:158))/?$}sDu',
+      0 => '{^(?|/livewire/preview\\-file/([^/]++)(*:39)|/dashboard/data\\-master/(?|user/(?|edit/([^/]++)(*:94)|update/([^/]++)(*:116)|delete/([^/]++)(*:139))|voucher/(?|edit/([^/]++)(*:172)|update/([^/]++)(*:195)|delete/([^/]++)(*:218)))|/storage/(.*)(*:241))/?$}sDu',
     ),
     3 => 
     array (
@@ -311,7 +390,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      91 => 
+      94 => 
       array (
         0 => 
         array (
@@ -334,7 +413,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      113 => 
+      116 => 
       array (
         0 => 
         array (
@@ -348,7 +427,7 @@ app('router')->setCompiledRoutes(
           ),
           2 => 
           array (
-            'PUT' => 0,
+            'POST' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -356,7 +435,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      136 => 
+      139 => 
       array (
         0 => 
         array (
@@ -370,7 +449,7 @@ app('router')->setCompiledRoutes(
           ),
           2 => 
           array (
-            'DELETE' => 0,
+            'POST' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -378,7 +457,74 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      158 => 
+      172 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dashboard.data-master.voucher.edit',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      195 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dashboard.data-master.voucher.update',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      218 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dashboard.data-master.voucher.delete',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      241 => 
       array (
         0 => 
         array (
@@ -447,7 +593,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::8dIcIVPWWPTQv2Fs' => 
+    'generated::2soYXTzMweZ5K83l' => 
     array (
       'methods' => 
       array (
@@ -459,7 +605,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile',
         'controller' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile',
-        'as' => 'generated::8dIcIVPWWPTQv2Fs',
+        'as' => 'generated::2soYXTzMweZ5K83l',
       ),
       'fallback' => false,
       'defaults' => 
@@ -475,7 +621,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::xImPKaLPa6x2mEmh' => 
+    'generated::bxzYh0gwdrP35OCB' => 
     array (
       'methods' => 
       array (
@@ -487,7 +633,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps',
         'controller' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps',
-        'as' => 'generated::xImPKaLPa6x2mEmh',
+        'as' => 'generated::bxzYh0gwdrP35OCB',
       ),
       'fallback' => false,
       'defaults' => 
@@ -558,7 +704,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Ttl6i4My9hlCwgH2' => 
+    'generated::ioHsn9TRBbTGSjpC' => 
     array (
       'methods' => 
       array (
@@ -586,8 +732,8 @@ app('router')->setCompiledRoutes(
                     return response(\\Illuminate\\Support\\Facades\\View::file(\'F:\\\\laragon\\\\www\\\\ecommerce-gmedia\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Configuration\'.\'/../resources/health-up.blade.php\', [
                         \'exception\' => $exception,
                     ]), status: $exception ? 500 : 200);
-                }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000008150000000000000000";}}',
-        'as' => 'generated::Ttl6i4My9hlCwgH2',
+                }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000007eb0000000000000000";}}',
+        'as' => 'generated::ioHsn9TRBbTGSjpC',
       ),
       'fallback' => false,
       'defaults' => 
@@ -769,7 +915,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:47:"function () {
         return \'Dashboard\';
-    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000081a0000000000000000";}}',
+    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000007f00000000000000000";}}',
         'as' => 'dashboard.index',
         'namespace' => NULL,
         'prefix' => '/dashboard',
@@ -950,7 +1096,7 @@ app('router')->setCompiledRoutes(
     array (
       'methods' => 
       array (
-        0 => 'PUT',
+        0 => 'POST',
       ),
       'uri' => 'dashboard/data-master/user/update/{id}',
       'action' => 
@@ -988,7 +1134,7 @@ app('router')->setCompiledRoutes(
     array (
       'methods' => 
       array (
-        0 => 'DELETE',
+        0 => 'POST',
       ),
       'uri' => 'dashboard/data-master/user/delete/{id}',
       'action' => 
@@ -999,11 +1145,242 @@ app('router')->setCompiledRoutes(
           1 => 'auth',
           2 => 'superadmin',
         ),
-        'uses' => 'App\\Http\\Controllers\\UserController@delete',
-        'controller' => 'App\\Http\\Controllers\\UserController@delete',
+        'uses' => 'App\\Http\\Controllers\\UserController@destroy',
+        'controller' => 'App\\Http\\Controllers\\UserController@destroy',
         'as' => 'dashboard.data-master.user.delete',
         'namespace' => NULL,
         'prefix' => 'dashboard/data-master/user',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'dashboard.data-master.voucher.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'dashboard/data-master/voucher',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'superadmin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\VoucherController@index',
+        'controller' => 'App\\Http\\Controllers\\VoucherController@index',
+        'as' => 'dashboard.data-master.voucher.index',
+        'namespace' => NULL,
+        'prefix' => 'dashboard/data-master/voucher',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'dashboard.data-master.voucher.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'dashboard/data-master/voucher/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'superadmin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\VoucherController@create',
+        'controller' => 'App\\Http\\Controllers\\VoucherController@create',
+        'as' => 'dashboard.data-master.voucher.create',
+        'namespace' => NULL,
+        'prefix' => 'dashboard/data-master/voucher',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'dashboard.data-master.voucher.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'dashboard/data-master/voucher/store',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'superadmin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\VoucherController@store',
+        'controller' => 'App\\Http\\Controllers\\VoucherController@store',
+        'as' => 'dashboard.data-master.voucher.store',
+        'namespace' => NULL,
+        'prefix' => 'dashboard/data-master/voucher',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'dashboard.data-master.voucher.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'dashboard/data-master/voucher/edit/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'superadmin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\VoucherController@edit',
+        'controller' => 'App\\Http\\Controllers\\VoucherController@edit',
+        'as' => 'dashboard.data-master.voucher.edit',
+        'namespace' => NULL,
+        'prefix' => 'dashboard/data-master/voucher',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'dashboard.data-master.voucher.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'dashboard/data-master/voucher/update/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'superadmin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\VoucherController@update',
+        'controller' => 'App\\Http\\Controllers\\VoucherController@update',
+        'as' => 'dashboard.data-master.voucher.update',
+        'namespace' => NULL,
+        'prefix' => 'dashboard/data-master/voucher',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'dashboard.data-master.voucher.delete' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'dashboard/data-master/voucher/delete/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'superadmin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\VoucherController@destroy',
+        'controller' => 'App\\Http\\Controllers\\VoucherController@destroy',
+        'as' => 'dashboard.data-master.voucher.delete',
+        'namespace' => NULL,
+        'prefix' => 'dashboard/data-master/voucher',
         'where' => 
         array (
         ),
@@ -1060,6 +1437,44 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'data-table.voucher' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'data-table/voucher',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\VoucherController@dataTable',
+        'controller' => 'App\\Http\\Controllers\\VoucherController@dataTable',
+        'as' => 'data-table.voucher',
+        'namespace' => NULL,
+        'prefix' => '/data-table',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'storage.local' => 
     array (
       'methods' => 
@@ -1076,7 +1491,7 @@ app('router')->setCompiledRoutes(
                         $config,
                         $isProduction
                     ))($request, $path);
-                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"00000000000008190000000000000000";}}',
+                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"00000000000007ef0000000000000000";}}',
         'as' => 'storage.local',
       ),
       'fallback' => false,

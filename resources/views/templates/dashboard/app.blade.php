@@ -16,7 +16,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <head>
     <base href="">
     <meta charset="utf-8" />
-    <title>Metronic | Dashboard</title>
+    <title>{{ $title }} - GMedia Commerce</title>
     <meta name="description" content="Updates and statistics" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!--begin::Fonts-->
@@ -110,7 +110,23 @@ License: You must have a valid license purchased only from themeforest(the above
                     <div class="d-flex flex-column-fluid">
                         <!--begin::Container-->
                         <div class="container">
-                            @yield('content')
+                            <div class="card card-custom gutter-b">
+                                <div class="card-header flex-wrap py-1">
+                                    <div class="card-title">
+                                        <h3 class="card-label">{{ $title }}</h3>
+                                    </div>
+                                    @if (isset($create_route))
+                                    <div class="card-toolbar">
+                                        <a href="{{ $create_route }}" class="btn btn-primary font-weight-bolder">
+                                            <i class="fas fa-plus-square"></i> Tambah Data
+                                        </a>
+                                    </div>
+                                    @endif
+                                </div>
+                                <div class="card-body">
+                                    @yield('content')
+                                </div>
+                            </div>
                         </div>
                         <!--end::Container-->
                     </div>
@@ -148,6 +164,78 @@ License: You must have a valid license purchased only from themeforest(the above
         toastr.options = {
             "positionClass": "toast-bottom-right",
         }
+
+        function deleteData(id, url) {
+            Swal.fire({
+                title: 'Apakah anda yakin?',
+                text: "Data yang dihapus tidak dapat dikembalikan!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Batal',
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        data: {
+                            '_token': '{{ csrf_token() }}',
+                        },
+                        success: function(response) {
+                            if (response.success === true) {
+                                Swal.fire({
+                                    title: 'Berhasil!',
+                                    text: response.message,
+                                    icon: 'success',
+                                    confirmButtonText: 'Oke',
+                                }).then((result) => {
+                                    if (result.value) {
+                                        table.ajax.reload();
+                                    }
+                                });
+                            } else {
+                                Swal.fire({
+                                    title: 'Gagal!',
+                                    text: response.message,
+                                    icon: 'error',
+                                    confirmButtonText: 'Oke',
+                                });
+                            }
+                        },
+                        error: function(xhr) {
+                            Swal.fire({
+                                title: 'Gagal!',
+                                text: 'Terjadi kesalahan pada server.',
+                                icon: 'error',
+                                confirmButtonText: 'Oke',
+                            });
+                        }
+                    });
+                }
+            });
+        }
+
+        const formatCurrency = {
+            init() {
+                $('.currency-format').on('keyup blur', (e) => {
+                    this.formatInput($(e.currentTarget));
+                });
+            },
+
+            formatInput(input) {
+                let value = input.val().replace(/\D/g, "");
+                value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                input.val(value);
+                return value;
+            },
+
+            cleanValue(value) {
+                return value.replace(/\./g, "");
+            }
+        };
+        formatCurrency.init();
 
         $(document).ready(function () {
             $("#logout-btn").click(function (e) {

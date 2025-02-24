@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VoucherController;
 use Illuminate\Support\Facades\Route;
 
 Route::group([
@@ -46,8 +47,21 @@ Route::group([
             Route::get('/create', 'create')->name('create');
             Route::post('/store', 'store')->name('store');
             Route::get('/edit/{id}', 'edit')->name('edit');
-            Route::put('/update/{id}', 'update')->name('update');
-            Route::delete('/delete/{id}', 'delete')->name('delete');
+            Route::post('/update/{id}', 'update')->name('update');
+            Route::post('/delete/{id}', 'destroy')->name('delete');
+        });
+
+        Route::group([
+            'prefix' => 'voucher',
+            'as' => 'voucher.',
+            'controller' => VoucherController::class,
+        ], function () {
+            Route::get('/', 'index')->name('index');
+            Route::get('/create', 'create')->name('create');
+            Route::post('/store', 'store')->name('store');
+            Route::get('/edit/{id}', 'edit')->name('edit');
+            Route::post('/update/{id}', 'update')->name('update');
+            Route::post('/delete/{id}', 'destroy')->name('delete');
         });
     });
 
@@ -66,4 +80,5 @@ Route::group([
     'middleware' => ['auth'],
 ], function () {
     Route::get('/user', [UserController::class, 'dataTable'])->name('user');
+    Route::get('/voucher', [VoucherController::class, 'dataTable'])->name('voucher');
 });
