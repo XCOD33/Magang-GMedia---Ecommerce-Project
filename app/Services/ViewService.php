@@ -8,6 +8,10 @@ class ViewService
         'user' => [
             'title' => 'User',
             'create_route' => 'dashboard.data-master.user.create'
+        ],
+        'voucher' => [
+            'title' => 'Voucher',
+            'create_route' => 'dashboard.data-master.voucher.create'
         ]
     ];
 
