@@ -119,7 +119,8 @@ class VoucherController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $voucher = Voucher::findOrFail($id);
+        return view('pages.dashboard.data-master.voucher.edit', compact('voucher'));
     }
 
     /**
@@ -127,7 +128,44 @@ class VoucherController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $voucher = Voucher::findOrFail($id);
+
+        $validation = Validator::make($request->all(), [
+            'discount' => 'required|numeric',
+            'expired_at' => 'required|date|after_or_equal:today'
+        ], [
+            'discount.required' => 'Discount tidak boleh kosong',
+            'discount.numeric' => 'Discount harus berupa angka',
+            'expired_at.required' => 'Tanggal kadaluarsa tidak boleh kosong',
+            'expired_at.date' => 'Tanggal kadaluarsa harus berupa tanggal',
+            'expired_at.after_or_equal' => 'Tanggal kadaluarsa harus lebih besar atau sama dengan hari ini',
+        ]);
+
+        if ($validation->fails()) {
+            foreach ($validation->errors()->all() as $error) {
+                toastr()->error($error);
+            }
+
+            return redirect()->back()->withInput();
+        }
+
+        DB::beginTransaction();
+        try {
+            $voucher->update([
+                'discount' => $request->discount,
+                'expired_at' => $request->expired_at,
+            ]);
+        } catch (\Exception $e) {
+            DB::rollBack();
+
+            toastr()->error($e->getMessage());
+            return redirect()->back()->withInput();
+        }
+
+        DB::commit();
+
+        toastr()->success('Voucher berhasil diperbarui');
+        return redirect()->route('dashboard.data-master.voucher.index');
     }
 
     /**
@@ -135,6 +173,31 @@ class VoucherController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $voucher = Voucher::find($id);
+        if (!$voucher) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Voucher tidak ditemukan'
+            ]);
+        }
+
+        DB::beginTransaction();
+        try {
+            $voucher->delete();
+        } catch (\Exception $e) {
+            DB::rollBack();
+
+            return response()->json([
+                'success' => false,
+                'message' => $e->getMessage()
+            ]);
+        }
+
+        DB::commit();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Voucher berhasil dihapus'
+        ]);
     }
 }
