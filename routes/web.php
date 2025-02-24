@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VoucherController;
 use Illuminate\Support\Facades\Route;
 
+// auth
 Route::group([
     'controller' => AuthController::class,
 ], function () {
@@ -24,20 +25,24 @@ Route::group([
     });
 });
 
+// dashboard
 Route::group([
     'prefix' => 'dashboard',
     'as' => 'dashboard.',
     'middleware' => ['auth'],
 ], function () {
+    // dashboard/index
     Route::get('/', function () {
         return 'Dashboard';
     })->name('index');
 
+    // dashboard/data-master
     Route::group([
         'prefix' => 'data-master',
         'as' => 'data-master.',
         'middleware' => ['superadmin'],
     ], function () {
+        // dashboard/data-master/user
         Route::group([
             'prefix' => 'user',
             'as' => 'user.',
@@ -51,6 +56,7 @@ Route::group([
             Route::post('/delete/{id}', 'destroy')->name('delete');
         });
 
+        // dashboard/data-master/voucher
         Route::group([
             'prefix' => 'voucher',
             'as' => 'voucher.',
@@ -65,6 +71,7 @@ Route::group([
         });
     });
 
+    // dashboard/seller
     Route::group([
         'prefix' => 'seller',
         'as' => 'seller.',
@@ -74,6 +81,7 @@ Route::group([
     });
 });
 
+// data-table
 Route::group([
     'prefix' => 'data-table',
     'as' => 'data-table.',
