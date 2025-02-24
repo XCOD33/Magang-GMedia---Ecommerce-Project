@@ -9,6 +9,9 @@ class ViewService
             'title' => 'User',
             'create_route' => 'dashboard.data-master.user.create'
         ],
+        'store' => [
+            'title' => 'Store',
+        ],
         'voucher' => [
             'title' => 'Voucher',
             'create_route' => 'dashboard.data-master.voucher.create'
@@ -29,7 +32,7 @@ class ViewService
         if (isset($this->menuMap[$lastSegment])) {
             $menu = $this->menuMap[$lastSegment];
             $data['title'] = $menu['title'];
-            $data['create_route'] = route($menu['create_route']);
+            $data['create_route'] = isset($menu['create_route']) ? route($menu['create_route']) : null;
         }
 
         // Handle create/edit pages
