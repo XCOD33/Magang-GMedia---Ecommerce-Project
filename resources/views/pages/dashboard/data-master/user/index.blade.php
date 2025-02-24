@@ -1,41 +1,25 @@
 @extends('templates.dashboard.app')
 
 @section('content')
-<div class="card card-custom gutter-b">
-    <div class="card-header flex-wrap py-">
-        <div class="card-title">
-            <h3 class="card-label">Kelola User</h3>
-        </div>
-        <div class="card-toolbar">
-            <a href="#" class="btn btn-primary font-weight-bolder">
-                <i class="fas fa-plus-square"></i> Tambah Data
-            </a>
-        </div>
-    </div>
-    <div class="card-body">
-        <table class="table table-bordered table-checkable" id="dataTable">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Nama</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th><i class="fas fa-cog text-dark"></i></th>
-                </tr>
-            </thead>
-        </table>
-    </div>
-</div>
+<table class="table table-bordered table-checkable" id="dataTable">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th><i class="fas fa-cog text-dark"></i></th>
+        </tr>
+    </thead>
+</table>
 @endsection
 
 @section('js')
 <script>
-    $(document).ready(function() {
-        dataTable();
-    })
+    let table;
 
-    function dataTable() {
-        $('#dataTable').DataTable({
+    $(document).ready(function() {
+        table = $('#dataTable').DataTable({
             processing: true,
             serverSide: true,
             ajax: "{{ route('data-table.user') }}",
@@ -70,6 +54,58 @@
                     className: 'text-center',
                 }
             ]
+        });
+    })
+
+    function deleteData(id, url) {
+        Swal.fire({
+            title: 'Apakah anda yakin?',
+            text: "Data yang dihapus tidak dapat dikembalikan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, hapus!',
+            cancelButtonText: 'Batal',
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: {
+                        '_token': '{{ csrf_token() }}',
+                    },
+                    success: function(response) {
+                        if (response.success === true) {
+                            Swal.fire({
+                                title: 'Berhasil!',
+                                text: response.message,
+                                icon: 'success',
+                                confirmButtonText: 'Oke',
+                            }).then((result) => {
+                                if (result.value) {
+                                    table.ajax.reload();
+                                }
+                            });
+                        } else {
+                            Swal.fire({
+                                title: 'Gagal!',
+                                text: response.message,
+                                icon: 'error',
+                                confirmButtonText: 'Oke',
+                            });
+                        }
+                    },
+                    error: function(xhr) {
+                        Swal.fire({
+                            title: 'Gagal!',
+                            text: 'Terjadi kesalahan pada server.',
+                            icon: 'error',
+                            confirmButtonText: 'Oke',
+                        });
+                    }
+                });
+            }
         });
     }
 </script>

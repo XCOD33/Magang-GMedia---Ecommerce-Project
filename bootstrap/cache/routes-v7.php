@@ -32,7 +32,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::8dIcIVPWWPTQv2Fs',
+            '_route' => 'generated::HNQ2H2TfuJMt7p55',
           ),
           1 => NULL,
           2 => 
@@ -52,7 +52,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::xImPKaLPa6x2mEmh',
+            '_route' => 'generated::YDSc07qi1lSzxqbh',
           ),
           1 => NULL,
           2 => 
@@ -91,7 +91,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Ttl6i4My9hlCwgH2',
+            '_route' => 'generated::rdgc0EsSIgZv0unr',
           ),
           1 => NULL,
           2 => 
@@ -348,7 +348,7 @@ app('router')->setCompiledRoutes(
           ),
           2 => 
           array (
-            'PUT' => 0,
+            'POST' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -370,7 +370,7 @@ app('router')->setCompiledRoutes(
           ),
           2 => 
           array (
-            'DELETE' => 0,
+            'POST' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -447,7 +447,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::8dIcIVPWWPTQv2Fs' => 
+    'generated::HNQ2H2TfuJMt7p55' => 
     array (
       'methods' => 
       array (
@@ -459,7 +459,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile',
         'controller' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile',
-        'as' => 'generated::8dIcIVPWWPTQv2Fs',
+        'as' => 'generated::HNQ2H2TfuJMt7p55',
       ),
       'fallback' => false,
       'defaults' => 
@@ -475,7 +475,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::xImPKaLPa6x2mEmh' => 
+    'generated::YDSc07qi1lSzxqbh' => 
     array (
       'methods' => 
       array (
@@ -487,7 +487,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps',
         'controller' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps',
-        'as' => 'generated::xImPKaLPa6x2mEmh',
+        'as' => 'generated::YDSc07qi1lSzxqbh',
       ),
       'fallback' => false,
       'defaults' => 
@@ -558,7 +558,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Ttl6i4My9hlCwgH2' => 
+    'generated::rdgc0EsSIgZv0unr' => 
     array (
       'methods' => 
       array (
@@ -586,8 +586,8 @@ app('router')->setCompiledRoutes(
                     return response(\\Illuminate\\Support\\Facades\\View::file(\'F:\\\\laragon\\\\www\\\\ecommerce-gmedia\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Configuration\'.\'/../resources/health-up.blade.php\', [
                         \'exception\' => $exception,
                     ]), status: $exception ? 500 : 200);
-                }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000008150000000000000000";}}',
-        'as' => 'generated::Ttl6i4My9hlCwgH2',
+                }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000007eb0000000000000000";}}',
+        'as' => 'generated::rdgc0EsSIgZv0unr',
       ),
       'fallback' => false,
       'defaults' => 
@@ -769,7 +769,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:47:"function () {
         return \'Dashboard\';
-    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000081a0000000000000000";}}',
+    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000007f00000000000000000";}}',
         'as' => 'dashboard.index',
         'namespace' => NULL,
         'prefix' => '/dashboard',
@@ -950,7 +950,7 @@ app('router')->setCompiledRoutes(
     array (
       'methods' => 
       array (
-        0 => 'PUT',
+        0 => 'POST',
       ),
       'uri' => 'dashboard/data-master/user/update/{id}',
       'action' => 
@@ -988,7 +988,7 @@ app('router')->setCompiledRoutes(
     array (
       'methods' => 
       array (
-        0 => 'DELETE',
+        0 => 'POST',
       ),
       'uri' => 'dashboard/data-master/user/delete/{id}',
       'action' => 
@@ -999,8 +999,8 @@ app('router')->setCompiledRoutes(
           1 => 'auth',
           2 => 'superadmin',
         ),
-        'uses' => 'App\\Http\\Controllers\\UserController@delete',
-        'controller' => 'App\\Http\\Controllers\\UserController@delete',
+        'uses' => 'App\\Http\\Controllers\\UserController@destroy',
+        'controller' => 'App\\Http\\Controllers\\UserController@destroy',
         'as' => 'dashboard.data-master.user.delete',
         'namespace' => NULL,
         'prefix' => 'dashboard/data-master/user',
@@ -1076,7 +1076,7 @@ app('router')->setCompiledRoutes(
                         $config,
                         $isProduction
                     ))($request, $path);
-                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"00000000000008190000000000000000";}}',
+                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"00000000000007ef0000000000000000";}}',
         'as' => 'storage.local',
       ),
       'fallback' => false,

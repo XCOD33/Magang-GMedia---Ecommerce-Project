@@ -110,7 +110,23 @@ License: You must have a valid license purchased only from themeforest(the above
                     <div class="d-flex flex-column-fluid">
                         <!--begin::Container-->
                         <div class="container">
-                            @yield('content')
+                            <div class="card card-custom gutter-b">
+                                <div class="card-header flex-wrap py-1">
+                                    <div class="card-title">
+                                        <h3 class="card-label">{{ $title }}</h3>
+                                    </div>
+                                    @if (isset($create_route))
+                                    <div class="card-toolbar">
+                                        <a href="{{ $create_route }}" class="btn btn-primary font-weight-bolder">
+                                            <i class="fas fa-plus-square"></i> Tambah Data
+                                        </a>
+                                    </div>
+                                    @endif
+                                </div>
+                                <div class="card-body">
+                                    @yield('content')
+                                </div>
+                            </div>
                         </div>
                         <!--end::Container-->
                     </div>

@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Services\DataTableService;
 use App\Services\SlugService;
+use App\Services\ViewService;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -36,11 +37,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+
         View::composer('pages.dashboard.*', function ($view) {
-            $view->with('title', 'Dashboard');
-            $view->with('authUserName', auth()->user()->name);
-            $view->with('authUserRole', auth()->user()->role);
-            $view->with('authUserEmail', auth()->user()->email);
+            $viewService = app(ViewService::class);
+            $pageInfo = $viewService->getPageInfo(request()->path());
+
+            $view->with([
+                'title' => $pageInfo['title'],
+                'create_route' => $pageInfo['create_route'],
+                'authUserName' => auth()->user()->name,
+                'authUserRole' => auth()->user()->role,
+                'authUserEmail' => auth()->user()->email
+            ]);
         });
     }
 }

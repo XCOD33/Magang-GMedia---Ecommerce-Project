@@ -35,14 +35,14 @@ class DataTableService
      * @param string $route The route to the edit page for the record.
      * @return string The HTML for the action buttons.
      */
-    public function generateActionButtons($id, $route)
+    public function generateActionButtons($id, $editRoute, $deleteRoute)
     {
         return '
             <div class="btn-group">
-                <a href="' . $route . '" class="btn btn-sm btn-warning btn-icon">
+                <a href="' . $editRoute . '" class="btn btn-sm btn-warning btn-icon">
                     <i class="fas fa-edit"></i>
                 </a>
-                <button class="btn btn-sm btn-danger btn-icon" onclick="deleteUser(' . $id . ')">
+                <button class="btn btn-sm btn-danger btn-icon" onclick="deleteData(\'' . $id . '\', \'' . $deleteRoute . '\')">
                     <i class="fas fa-trash"></i>
                 </button>
             </div>
