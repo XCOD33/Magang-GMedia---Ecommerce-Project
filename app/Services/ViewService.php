@@ -12,6 +12,10 @@ class ViewService
         'store' => [
             'title' => 'Store',
         ],
+        'product-category' => [
+            'title' => 'Product Category',
+            'create_route' => 'dashboard.data-master.product-category.create'
+        ],
         'voucher' => [
             'title' => 'Voucher',
             'create_route' => 'dashboard.data-master.voucher.create'
@@ -38,10 +42,10 @@ class ViewService
         // Handle create/edit pages
         if (str_contains($path, 'create')) {
             $menuKey = $segments[count($segments) - 2];
-            $data['title'] = 'Tambah ' . ($this->menuMap[$menuKey]['label'] ?? ucfirst($menuKey));
+            $data['title'] = 'Tambah ' . ($this->menuMap[$menuKey]['title'] ?? ucfirst($menuKey));
         } else if (str_contains($path, 'edit')) {
             $menuKey = $segments[count($segments) - 3];
-            $data['title'] = 'Edit ' . ($this->menuMap[$menuKey]['label'] ?? ucfirst($menuKey));
+            $data['title'] = 'Edit ' . ($this->menuMap[$menuKey]['title'] ?? ucfirst($menuKey));
         }
 
         return $data;

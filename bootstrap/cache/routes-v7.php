@@ -32,7 +32,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::SqA11A3b9GNIdaIG',
+            '_route' => 'generated::9V1UEeeeeR2a2tRf',
           ),
           1 => NULL,
           2 => 
@@ -52,7 +52,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::hlec2q3SYMCCijXC',
+            '_route' => 'generated::hd52Pdw9ftAdPJj7',
           ),
           1 => NULL,
           2 => 
@@ -91,7 +91,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::X0Ua045F1YyICzfl',
+            '_route' => 'generated::UW4M3QgvfPHamCnH',
           ),
           1 => NULL,
           2 => 
@@ -320,6 +320,65 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/dashboard/data-master/product-category' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dashboard.data-master.product-category.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/dashboard/data-master/product-category/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dashboard.data-master.product-category.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/dashboard/data-master/product-category/store' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dashboard.data-master.product-category.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/dashboard/data-master/voucher' => 
       array (
         0 => 
@@ -419,6 +478,26 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/data-table/product-category' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'data-table.product-category',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/data-table/voucher' => 
       array (
         0 => 
@@ -442,7 +521,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/livewire/preview\\-file/([^/]++)(*:39)|/dashboard/data\\-master/(?|user/(?|edit/([^/]++)(*:94)|update/([^/]++)(*:116)|delete/([^/]++)(*:139))|store/(?|edit/([^/]++)(*:170)|update/([^/]++)(*:193)|delete/([^/]++)(*:216))|voucher/(?|edit/([^/]++)(*:249)|update/([^/]++)(*:272)|delete/([^/]++)(*:295)))|/storage/(.*)(*:318))/?$}sDu',
+      0 => '{^(?|/livewire/preview\\-file/([^/]++)(*:39)|/dashboard/data\\-master/(?|user/(?|edit/([^/]++)(*:94)|update/([^/]++)(*:116)|delete/([^/]++)(*:139))|store/(?|edit/([^/]++)(*:170)|update/([^/]++)(*:193)|delete/([^/]++)(*:216))|product\\-category/(?|edit/([^/]++)(*:259)|update/([^/]++)(*:282)|delete/([^/]++)(*:305))|voucher/(?|edit/([^/]++)(*:338)|update/([^/]++)(*:361)|delete/([^/]++)(*:384)))|/category/([^/]++)(*:412)|/storage/(.*)(*:433))/?$}sDu',
     ),
     3 => 
     array (
@@ -603,7 +682,74 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      249 => 
+      259 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dashboard.data-master.product-category.edit',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      282 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dashboard.data-master.product-category.update',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      305 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dashboard.data-master.product-category.delete',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      338 => 
       array (
         0 => 
         array (
@@ -626,7 +772,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      272 => 
+      361 => 
       array (
         0 => 
         array (
@@ -648,7 +794,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      295 => 
+      384 => 
       array (
         0 => 
         array (
@@ -670,7 +816,30 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      318 => 
+      412 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'category.index',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      433 => 
       array (
         0 => 
         array (
@@ -739,7 +908,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::SqA11A3b9GNIdaIG' => 
+    'generated::9V1UEeeeeR2a2tRf' => 
     array (
       'methods' => 
       array (
@@ -751,7 +920,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile',
         'controller' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile',
-        'as' => 'generated::SqA11A3b9GNIdaIG',
+        'as' => 'generated::9V1UEeeeeR2a2tRf',
       ),
       'fallback' => false,
       'defaults' => 
@@ -767,7 +936,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::hlec2q3SYMCCijXC' => 
+    'generated::hd52Pdw9ftAdPJj7' => 
     array (
       'methods' => 
       array (
@@ -779,7 +948,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps',
         'controller' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps',
-        'as' => 'generated::hlec2q3SYMCCijXC',
+        'as' => 'generated::hd52Pdw9ftAdPJj7',
       ),
       'fallback' => false,
       'defaults' => 
@@ -850,7 +1019,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::X0Ua045F1YyICzfl' => 
+    'generated::UW4M3QgvfPHamCnH' => 
     array (
       'methods' => 
       array (
@@ -879,7 +1048,7 @@ app('router')->setCompiledRoutes(
                         \'exception\' => $exception,
                     ]), status: $exception ? 500 : 200);
                 }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000007ee0000000000000000";}}',
-        'as' => 'generated::X0Ua045F1YyICzfl',
+        'as' => 'generated::UW4M3QgvfPHamCnH',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1545,6 +1714,237 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'dashboard.data-master.product-category.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'dashboard/data-master/product-category',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'superadmin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ProductCategoryController@index',
+        'controller' => 'App\\Http\\Controllers\\ProductCategoryController@index',
+        'as' => 'dashboard.data-master.product-category.index',
+        'namespace' => NULL,
+        'prefix' => 'dashboard/data-master/product-category',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'dashboard.data-master.product-category.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'dashboard/data-master/product-category/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'superadmin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ProductCategoryController@create',
+        'controller' => 'App\\Http\\Controllers\\ProductCategoryController@create',
+        'as' => 'dashboard.data-master.product-category.create',
+        'namespace' => NULL,
+        'prefix' => 'dashboard/data-master/product-category',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'dashboard.data-master.product-category.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'dashboard/data-master/product-category/store',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'superadmin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ProductCategoryController@store',
+        'controller' => 'App\\Http\\Controllers\\ProductCategoryController@store',
+        'as' => 'dashboard.data-master.product-category.store',
+        'namespace' => NULL,
+        'prefix' => 'dashboard/data-master/product-category',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'dashboard.data-master.product-category.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'dashboard/data-master/product-category/edit/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'superadmin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ProductCategoryController@edit',
+        'controller' => 'App\\Http\\Controllers\\ProductCategoryController@edit',
+        'as' => 'dashboard.data-master.product-category.edit',
+        'namespace' => NULL,
+        'prefix' => 'dashboard/data-master/product-category',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'dashboard.data-master.product-category.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'dashboard/data-master/product-category/update/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'superadmin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ProductCategoryController@update',
+        'controller' => 'App\\Http\\Controllers\\ProductCategoryController@update',
+        'as' => 'dashboard.data-master.product-category.update',
+        'namespace' => NULL,
+        'prefix' => 'dashboard/data-master/product-category',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'dashboard.data-master.product-category.delete' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'dashboard/data-master/product-category/delete/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'superadmin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ProductCategoryController@destroy',
+        'controller' => 'App\\Http\\Controllers\\ProductCategoryController@destroy',
+        'as' => 'dashboard.data-master.product-category.delete',
+        'namespace' => NULL,
+        'prefix' => 'dashboard/data-master/product-category',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'dashboard.data-master.voucher.index' => 
     array (
       'methods' => 
@@ -1852,6 +2252,44 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'data-table.product-category' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'data-table/product-category',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ProductCategoryController@dataTable',
+        'controller' => 'App\\Http\\Controllers\\ProductCategoryController@dataTable',
+        'as' => 'data-table.product-category',
+        'namespace' => NULL,
+        'prefix' => '/data-table',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'data-table.voucher' => 
     array (
       'methods' => 
@@ -1872,6 +2310,44 @@ app('router')->setCompiledRoutes(
         'as' => 'data-table.voucher',
         'namespace' => NULL,
         'prefix' => '/data-table',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'category.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'category/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:46:"function () {
+        return \'Category\';
+    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000008150000000000000000";}}',
+        'as' => 'category.index',
+        'namespace' => NULL,
+        'prefix' => '/category',
         'where' => 
         array (
         ),
