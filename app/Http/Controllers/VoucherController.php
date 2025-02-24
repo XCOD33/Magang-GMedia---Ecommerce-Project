@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Voucher;
 use App\Services\DataTableService;
+use App\Services\JsonResponseService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,10 +15,12 @@ class VoucherController extends Controller
 {
 
     private $dataTableService;
+    private $jsonResponseService;
 
-    public function __construct(DataTableService $dataTableService)
+    public function __construct(DataTableService $dataTableService, JsonResponseService $jsonResponseService)
     {
         $this->dataTableService = $dataTableService;
+        $this->jsonResponseService = $jsonResponseService;
     }
 
     /**
@@ -175,10 +178,7 @@ class VoucherController extends Controller
     {
         $voucher = Voucher::find($id);
         if (!$voucher) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Voucher tidak ditemukan'
-            ]);
+            return $this->jsonResponseService->error('Voucher tidak ditemukan');
         }
 
         DB::beginTransaction();
@@ -187,17 +187,11 @@ class VoucherController extends Controller
         } catch (\Exception $e) {
             DB::rollBack();
 
-            return response()->json([
-                'success' => false,
-                'message' => $e->getMessage()
-            ]);
+            return $this->jsonResponseService->error($e->getMessage());
         }
 
         DB::commit();
 
-        return response()->json([
-            'success' => true,
-            'message' => 'Voucher berhasil dihapus'
-        ]);
+        return $this->jsonResponseService->success('Voucher berhasil dihapus');
     }
 }
