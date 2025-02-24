@@ -1,17 +1,20 @@
 @extends('templates.dashboard.app')
 
 @section('content')
-<table class="table table-bordered table-checkable" id="dataTable">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Nama</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th><i class="fas fa-cog text-dark"></i></th>
-        </tr>
-    </thead>
-</table>
+<div class="table-responsive">
+    <table class="table table-bordered table-checkable" id="dataTable">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nama</th>
+                <th>Slug</th>
+                <th>Deskripsi</th>
+                <th>Total Product</th>
+                <th><i class="fas fa-cog text-dark"></i></th>
+            </tr>
+        </thead>
+    </table>
+</div>
 @endsection
 
 @section('js')
@@ -22,7 +25,7 @@
         table = $('#dataTable').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('data-table.user') }}",
+            ajax: "{{ route('data-table.product-category') }}",
             columns: [
                 {
                     data: 'DT_RowIndex',
@@ -34,16 +37,20 @@
                 },
                 {
                     data: 'name',
-                    name: 'name'
+                    name: 'name',
                 },
                 {
-                    data: 'email',
-                    name: 'email'
+                    data: 'slug',
+                    name: 'slug',
                 },
                 {
-                    data: 'role',
-                    name: 'role',
-                    className: 'text-center'
+                    data: 'description',
+                    name: 'description',
+                },
+                {
+                    data: 'total_product',
+                    name: 'total_product',
+                    className: 'text-center',
                 },
                 {
                     data: 'action',

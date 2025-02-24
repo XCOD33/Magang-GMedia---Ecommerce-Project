@@ -5,9 +5,9 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>Nama</th>
-            <th>Email</th>
-            <th>Role</th>
+            <th>Kode</th>
+            <th>Diskon</th>
+            <th>Kadaluarsa</th>
             <th><i class="fas fa-cog text-dark"></i></th>
         </tr>
     </thead>
@@ -16,13 +16,13 @@
 
 @section('js')
 <script>
-    let table;
+    var table
 
     $(document).ready(function() {
         table = $('#dataTable').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('data-table.user') }}",
+            ajax: "{{ route('data-table.voucher') }}",
             columns: [
                 {
                     data: 'DT_RowIndex',
@@ -33,22 +33,20 @@
                     className: 'text-center',
                 },
                 {
-                    data: 'name',
-                    name: 'name'
+                    data: 'code',
+                    name: 'code'
                 },
                 {
-                    data: 'email',
-                    name: 'email'
+                    data: 'discount',
+                    name: 'discount'
                 },
                 {
-                    data: 'role',
-                    name: 'role',
-                    className: 'text-center'
+                    data: 'expired_at',
+                    name: 'expired_at'
                 },
                 {
                     data: 'action',
                     name: 'action',
-                    width: '15%',
                     orderable: false,
                     searchable: false,
                     className: 'text-center',
@@ -56,5 +54,6 @@
             ]
         });
     })
+
 </script>
 @endsection

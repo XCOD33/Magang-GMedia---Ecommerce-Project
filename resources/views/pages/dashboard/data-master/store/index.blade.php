@@ -5,9 +5,11 @@
     <thead>
         <tr>
             <th>#</th>
+            <th>Pemilik</th>
             <th>Nama</th>
-            <th>Email</th>
-            <th>Role</th>
+            <th>Deskripsi</th>
+            <th>Logo</th>
+            <th>Total Produk</th>
             <th><i class="fas fa-cog text-dark"></i></th>
         </tr>
     </thead>
@@ -22,7 +24,7 @@
         table = $('#dataTable').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('data-table.user') }}",
+            ajax: "{{ route('data-table.store') }}",
             columns: [
                 {
                     data: 'DT_RowIndex',
@@ -33,16 +35,26 @@
                     className: 'text-center',
                 },
                 {
+                    data: 'owner',
+                    name: 'owner'
+                },
+                {
                     data: 'name',
                     name: 'name'
                 },
                 {
-                    data: 'email',
-                    name: 'email'
+                    data: 'description',
+                    name: 'description',
+                    className: 'text-center'
                 },
                 {
-                    data: 'role',
-                    name: 'role',
+                    data: 'logo_url',
+                    name: 'logo_url',
+                    className: 'text-center'
+                },
+                {
+                    data: 'total_product',
+                    name: 'total_product',
                     className: 'text-center'
                 },
                 {

@@ -1,6 +1,6 @@
 <ul class="menu-nav">
-    <li class="menu-item menu-item-active" aria-haspopup="true">
-        <a href="index.html" class="menu-link">
+    <li class="menu-item {{ Route::is('dashboard.index') ? 'menu-item-active' : '' }}" aria-haspopup="true">
+        <a href="{{ route('dashboard.index') }}" class="menu-link">
             <span class="svg-icon menu-icon">
                 <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Layers.svg-->
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
@@ -20,28 +20,101 @@
             <span class="menu-text">Dashboard</span>
         </a>
     </li>
-    <li class="menu-item menu-item-active" aria-haspopup="true">
-        <a href="index.html" class="menu-link">
-            <span class="svg-icon menu-icon">
-                <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Layers.svg-->
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                    height="24px" viewBox="0 0 24 24" version="1.1">
-                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <polygon points="0 0 24 0 24 24 0 24" />
-                        <path
-                            d="M12.9336061,16.072447 L19.36,10.9564761 L19.5181585,10.8312381 C20.1676248,10.3169571 20.2772143,9.3735535 19.7629333,8.72408713 C19.6917232,8.63415859 19.6104327,8.55269514 19.5206557,8.48129411 L12.9336854,3.24257445 C12.3871201,2.80788259 11.6128799,2.80788259 11.0663146,3.24257445 L4.47482784,8.48488609 C3.82645598,9.00054628 3.71887192,9.94418071 4.23453211,10.5925526 C4.30500305,10.6811601 4.38527899,10.7615046 4.47382636,10.8320511 L4.63,10.9564761 L11.0659024,16.0730648 C11.6126744,16.5077525 12.3871218,16.5074963 12.9336061,16.072447 Z"
-                            fill="#000000" fill-rule="nonzero" />
-                        <path
-                            d="M11.0563554,18.6706981 L5.33593024,14.122919 C4.94553994,13.8125559 4.37746707,13.8774308 4.06710397,14.2678211 C4.06471678,14.2708238 4.06234874,14.2738418 4.06,14.2768747 L4.06,14.2768747 C3.75257288,14.6738539 3.82516916,15.244888 4.22214834,15.5523151 C4.22358765,15.5534297 4.2250303,15.55454 4.22647627,15.555646 L11.0872776,20.8031356 C11.6250734,21.2144692 12.371757,21.2145375 12.909628,20.8033023 L19.7677785,15.559828 C20.1693192,15.2528257 20.2459576,14.6784381 19.9389553,14.2768974 C19.9376429,14.2751809 19.9363245,14.2734691 19.935,14.2717619 L19.935,14.2717619 C19.6266937,13.8743807 19.0546209,13.8021712 18.6572397,14.1104775 C18.654352,14.112718 18.6514778,14.1149757 18.6486172,14.1172508 L12.9235044,18.6705218 C12.377022,19.1051477 11.6029199,19.1052208 11.0563554,18.6706981 Z"
-                            fill="#000000" opacity="0.3" />
-                    </g>
-                </svg>
-                <!--end::Svg Icon-->
-            </span>
-            <span class="menu-text">Dashboard</span>
-        </a>
-    </li>
+
     <li class="menu-section">
+        <h4 class="menu-text">Data Master</h4>
+        <i class="menu-icon ki-bold-more-hor icon-md"></i>
+    </li>
+    <li class="menu-item {{ Route::is('dashboard.data-master.user.*') ? 'menu-item-active' : '' }}"
+        aria-haspopup="true">
+        <a href="{{ route('dashboard.data-master.user.index') }}" class="menu-link">
+            <span class="svg-icon menu-icon">
+                <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo5\dist/../src/media/svg/icons\Communication\Group.svg--><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                    height="24px" viewBox="0 0 24 24" version="1.1">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <polygon points="0 0 24 0 24 24 0 24" />
+                        <path
+                            d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z"
+                            fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                        <path
+                            d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z"
+                            fill="#000000" fill-rule="nonzero" />
+                    </g>
+                </svg>
+                <!--end::Svg Icon-->
+            </span>
+            <span class="menu-text">User</span>
+        </a>
+    </li>
+    <li class="menu-item {{ Route::is('dashboard.data-master.store.*') ? 'menu-item-active' : '' }}"
+        aria-haspopup="true">
+        <a href="{{ route('dashboard.data-master.store.index') }}" class="menu-link">
+            <span class="svg-icon menu-icon">
+                <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo5/dist/../src/media/svg/icons/Clothes/Hanger.svg--><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                    height="24px" viewBox="0 0 24 24" version="1.1">
+                    <title>Stockholm-icons / Clothes / Hanger</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs />
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect x="0" y="0" width="24" height="24" />
+                        <path
+                            d="M18.2641169,18 L9.90940412,10.9507111 C8.24477845,9.54618316 8.03392756,7.05814259 9.43845547,5.39351691 C10.1267688,4.57773816 11.1163612,4.07580669 12.1811979,4.00236967 C14.1700425,3.86520797 15.8935112,5.36629356 16.0306728,7.35513817 C16.1048325,8.43045309 15.6945681,9.48264626 14.9120861,10.223945 L13.5365968,8.77203961 C13.8855318,8.44146963 14.0684825,7.97226137 14.0354122,7.49274235 C13.9742472,6.60584978 13.2056947,5.93646532 12.3188021,5.99763033 C11.7939961,6.03382384 11.3062744,6.28120132 10.9670384,6.68325879 C10.2748153,7.5036714 10.3787334,8.72990496 11.199146,9.4221281 L20.5993649,17.3535628 C20.9371521,17.6385708 21.1320585,18.0580387 21.1320585,18.5 C21.1320585,19.3284271 20.4604856,20 19.6320585,20 L4.0273216,20 C3.54950629,20 3.10027672,19.7723581 2.81771411,19.3870455 C2.32781241,18.7189977 2.47222833,17.7802942 3.14027611,17.2903925 L9.40863634,12.693595 L10.5913637,14.306405 L5.5546432,18 L18.2641169,18 Z"
+                            fill="#000000" fill-rule="nonzero" />
+                    </g>
+                </svg>
+                <!--end::Svg Icon-->
+            </span>
+            <span class="menu-text">Store</span>
+        </a>
+    </li>
+    <li class="menu-item {{ Route::is('dashboard.data-master.product-category.*') ? 'menu-item-active' : '' }}"
+        aria-haspopup="true">
+        <a href="{{ route('dashboard.data-master.product-category.index') }}" class="menu-link">
+            <span class="svg-icon menu-icon">
+                <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo5/dist/../src/media/svg/icons/Code/CMD.svg--><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                    height="24px" viewBox="0 0 24 24" version="1.1">
+                    <title>Stockholm-icons / Code / CMD</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs />
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect x="0" y="0" width="24" height="24" />
+                        <path
+                            d="M9,15 L7.5,15 C6.67157288,15 6,15.6715729 6,16.5 C6,17.3284271 6.67157288,18 7.5,18 C8.32842712,18 9,17.3284271 9,16.5 L9,15 Z M9,15 L9,9 L15,9 L15,15 L9,15 Z M15,16.5 C15,17.3284271 15.6715729,18 16.5,18 C17.3284271,18 18,17.3284271 18,16.5 C18,15.6715729 17.3284271,15 16.5,15 L15,15 L15,16.5 Z M16.5,9 C17.3284271,9 18,8.32842712 18,7.5 C18,6.67157288 17.3284271,6 16.5,6 C15.6715729,6 15,6.67157288 15,7.5 L15,9 L16.5,9 Z M9,7.5 C9,6.67157288 8.32842712,6 7.5,6 C6.67157288,6 6,6.67157288 6,7.5 C6,8.32842712 6.67157288,9 7.5,9 L9,9 L9,7.5 Z M11,13 L13,13 L13,11 L11,11 L11,13 Z M13,11 L13,7.5 C13,5.56700338 14.5670034,4 16.5,4 C18.4329966,4 20,5.56700338 20,7.5 C20,9.43299662 18.4329966,11 16.5,11 L13,11 Z M16.5,13 C18.4329966,13 20,14.5670034 20,16.5 C20,18.4329966 18.4329966,20 16.5,20 C14.5670034,20 13,18.4329966 13,16.5 L13,13 L16.5,13 Z M11,16.5 C11,18.4329966 9.43299662,20 7.5,20 C5.56700338,20 4,18.4329966 4,16.5 C4,14.5670034 5.56700338,13 7.5,13 L11,13 L11,16.5 Z M7.5,11 C5.56700338,11 4,9.43299662 4,7.5 C4,5.56700338 5.56700338,4 7.5,4 C9.43299662,4 11,5.56700338 11,7.5 L11,11 L7.5,11 Z"
+                            fill="#000000" fill-rule="nonzero" />
+                    </g>
+                </svg>
+                <!--end::Svg Icon-->
+            </span>
+            <span class="menu-text">Product Category</span>
+        </a>
+    </li>
+    <li class="menu-item {{ Route::is('dashboard.data-master.voucher.*') ? 'menu-item-active' : '' }}"
+        aria-haspopup="true">
+        <a href="{{ route('dashboard.data-master.voucher.index') }}" class="menu-link">
+            <span class="svg-icon menu-icon">
+                <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo5/dist/../src/media/svg/icons/Shopping/Barcode.svg--><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                    height="24px" viewBox="0 0 24 24" version="1.1">
+                    <title>Stockholm-icons / Shopping / Barcode</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs />
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect x="0" y="0" width="24" height="24" />
+                        <path
+                            d="M13,5 L15,5 L15,20 L13,20 L13,5 Z M5,5 L5,20 L3,20 C2.44771525,20 2,19.5522847 2,19 L2,6 C2,5.44771525 2.44771525,5 3,5 L5,5 Z M16,5 L18,5 L18,20 L16,20 L16,5 Z M20,5 L21,5 C21.5522847,5 22,5.44771525 22,6 L22,19 C22,19.5522847 21.5522847,20 21,20 L20,20 L20,5 Z"
+                            fill="#000000" />
+                        <polygon fill="#000000" opacity="0.3" points="9 5 9 20 7 20 7 5" />
+                    </g>
+                </svg>
+                <!--end::Svg Icon-->
+            </span>
+            <span class="menu-text">Voucher</span>
+        </a>
+    </li>
+    {{-- <li class="menu-section">
         <h4 class="menu-text">Custom</h4>
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
     </li>
@@ -2718,5 +2791,5 @@
                 </li>
             </ul>
         </div>
-    </li>
+    </li> --}}
 </ul>
