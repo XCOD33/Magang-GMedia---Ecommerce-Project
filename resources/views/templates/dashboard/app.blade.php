@@ -144,6 +144,51 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
 
+    <script>
+        toastr.options = {
+            "positionClass": "toast-bottom-right",
+        }
+
+        $(document).ready(function () {
+            $("#logout-btn").click(function (e) {
+                e.preventDefault();
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You want to logout",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, logout!",
+                }).then((isConfirm) => {
+                    if (isConfirm) {
+                        logout();
+                    }
+                });
+            });
+        });
+
+        function logout() {
+            $.ajax({
+                url: "{{ route('logout') }}",
+                type: "POST",
+                data: {
+                    _token: "{{ csrf_token() }}",
+                },
+                success: function (response) {
+                    console.log(response)
+                    toastr.success(response.message);
+                    setTimeout(function () {
+                        window.location.href = response.redirect;
+                    }, 5000);
+                },
+                error: function (xhr, status, error) {
+                    console.log(xhr.responseText);
+                },
+            });
+        }
+    </script>
+
     <!--end::Global Theme Bundle-->
     @yield('js')
     <!--end::Body-->

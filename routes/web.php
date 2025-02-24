@@ -6,12 +6,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::group([
     'controller' => AuthController::class,
-    'middleware' => ['guest'],
 ], function () {
-    Route::get('/auth', 'showAuthForm')->name('auth');
-    Route::post('/login', 'login')->name('login');
+    Route::group([
+        'middleware' => ['guest']
+    ], function () {
+        Route::get('/auth', 'showAuthForm')->name('auth');
+        Route::post('/login', 'login')->name('login');
 
-    Route::post('/register', 'register')->name('register');
+        Route::post('/register', 'register')->name('register');
+    });
+
+    Route::group([
+        'middleware' => ['auth']
+    ], function () {
+        Route::post('/logout', 'logout')->name('logout');
+    });
 });
 
 Route::group([
