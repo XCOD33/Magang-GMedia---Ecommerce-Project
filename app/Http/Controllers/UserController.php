@@ -67,7 +67,7 @@ class UserController extends Controller
             'name' => 'required|min:3|max:2550',
             'email' => 'required|min:3|max:255|email|unique:users,email',
             'password' => 'required|min:3|max:255|confirmed',
-            'role' => 'required|in:admin,seller,buyer',
+            'role' => 'required|in:admin',
         ], [
             'name.required' => 'Nama tidak boleh kosong',
             'name.min' => 'Nama minimal 3 karakter',
@@ -99,7 +99,7 @@ class UserController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => bcrypt($request->password),
-                'role' => $request->role,
+                'role' => 'admin',
             ]);
         } catch (\Throwable $th) {
             DB::rollBack();
@@ -143,7 +143,6 @@ class UserController extends Controller
         $validation = Validator::make($request->all(), [
             'name' => 'required|min:3|max:2550',
             'email' => 'required|min:3|max:255|email|unique:users,email,' . $user->id,
-            'role' => 'required|in:admin,seller,buyer',
             'password' => 'nullable|min:3|max:255|confirmed',
         ], [
             'name.required' => 'Nama tidak boleh kosong',
@@ -154,8 +153,6 @@ class UserController extends Controller
             'email.max' => 'Email maksimal 255 karakter',
             'email.email' => 'Email tidak valid',
             'email.unique' => 'Email sudah digunakan',
-            'role.required' => 'Role tidak boleh kosong',
-            'role.in' => 'Role tidak valid',
             'password.min' => 'Password minimal 3 karakter',
             'password.max' => 'Password maksimal 255 karakter',
             'password.confirmed' => 'Password tidak sama',
@@ -173,7 +170,6 @@ class UserController extends Controller
         try {
             $updateData = [
                 'name' => $request->name,
-                'role' => $request->role,
             ];
 
             if ($request->email != $user->email) {

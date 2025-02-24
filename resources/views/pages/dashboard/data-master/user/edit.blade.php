@@ -4,7 +4,6 @@
 <form action="{{ route('dashboard.data-master.user.update', $user->id) }}" method="post">
     <div class="card-body">
         @csrf
-        @method('PUT')
 
         <div class="form-group">
             <label for="name">Nama</label>
@@ -28,7 +27,7 @@
         </div>
         <div class="form-group">
             <label for="role">Role</label>
-            <select name="role" class="form-control" required>
+            <select name="role" class="form-control" disabled>
                 <option>-- Pilih salah satu --</option>
                 <option value="admin" {{ old('role', $user->role) == 'admin' ? 'selected' : '' }}>Admin</option>
                 <option value="seller" {{ old('role', $user->role) == 'seller' ? 'selected' : '' }}>Seller</option>

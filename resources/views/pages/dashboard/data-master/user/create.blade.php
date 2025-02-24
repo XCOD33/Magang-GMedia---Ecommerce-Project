@@ -29,8 +29,6 @@
             <select name="role" class="form-control" required>
                 <option>-- Pilih salah satu --</option>
                 <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option>
-                <option value="seller" {{ old('role') == 'seller' ? 'selected' : '' }}>Seller</option>
-                <option value="buyer" {{ old('role') == 'buyer' ? 'selected' : '' }}>Buyer</option>
             </select>
         </div>
     </div>
