@@ -25,7 +25,7 @@
         <h4 class="menu-text">Data Master</h4>
         <i class="menu-icon ki-bold-more-hor icon-md"></i>
     </li>
-    <li class="menu-item {{ Route::is('dashboard.data-master.user.index') ? 'menu-item-active' : '' }}"
+    <li class="menu-item {{ Route::is('dashboard.data-master.user.*') ? 'menu-item-active' : '' }}"
         aria-haspopup="true">
         <a href="{{ route('dashboard.data-master.user.index') }}" class="menu-link">
             <span class="svg-icon menu-icon">
@@ -45,6 +45,28 @@
                 <!--end::Svg Icon-->
             </span>
             <span class="menu-text">User</span>
+        </a>
+    </li>
+    <li class="menu-item {{ Route::is('dashboard.data-master.store.*') ? 'menu-item-active' : '' }}"
+        aria-haspopup="true">
+        <a href="{{ route('dashboard.data-master.store.index') }}" class="menu-link">
+            <span class="svg-icon menu-icon">
+                <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo5/dist/../src/media/svg/icons/Clothes/Hanger.svg--><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                    height="24px" viewBox="0 0 24 24" version="1.1">
+                    <title>Stockholm-icons / Clothes / Hanger</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs />
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect x="0" y="0" width="24" height="24" />
+                        <path
+                            d="M18.2641169,18 L9.90940412,10.9507111 C8.24477845,9.54618316 8.03392756,7.05814259 9.43845547,5.39351691 C10.1267688,4.57773816 11.1163612,4.07580669 12.1811979,4.00236967 C14.1700425,3.86520797 15.8935112,5.36629356 16.0306728,7.35513817 C16.1048325,8.43045309 15.6945681,9.48264626 14.9120861,10.223945 L13.5365968,8.77203961 C13.8855318,8.44146963 14.0684825,7.97226137 14.0354122,7.49274235 C13.9742472,6.60584978 13.2056947,5.93646532 12.3188021,5.99763033 C11.7939961,6.03382384 11.3062744,6.28120132 10.9670384,6.68325879 C10.2748153,7.5036714 10.3787334,8.72990496 11.199146,9.4221281 L20.5993649,17.3535628 C20.9371521,17.6385708 21.1320585,18.0580387 21.1320585,18.5 C21.1320585,19.3284271 20.4604856,20 19.6320585,20 L4.0273216,20 C3.54950629,20 3.10027672,19.7723581 2.81771411,19.3870455 C2.32781241,18.7189977 2.47222833,17.7802942 3.14027611,17.2903925 L9.40863634,12.693595 L10.5913637,14.306405 L5.5546432,18 L18.2641169,18 Z"
+                            fill="#000000" fill-rule="nonzero" />
+                    </g>
+                </svg>
+                <!--end::Svg Icon-->
+            </span>
+            <span class="menu-text">Store</span>
         </a>
     </li>
     <li class="menu-item {{ Route::is('dashboard.data-master.voucher.*') ? 'menu-item-active' : '' }}"
