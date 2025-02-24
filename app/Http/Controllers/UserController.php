@@ -4,17 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Services\DataTableService;
+use App\Services\JsonResponseService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
-    protected $dataTableService;
+    protected $dataTableService, $jsonResponseService;
 
-    public function __construct(DataTableService $dataTableService)
+    public function __construct(DataTableService $dataTableService, JsonResponseService $jsonResponseService)
     {
         $this->dataTableService = $dataTableService;
+        $this->jsonResponseService = $jsonResponseService;
     }
 
     /**
@@ -202,10 +204,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         if (!$user) {
-            return response()->json([
-                'success' => false,
-                'message' => 'User tidak ditemukan',
-            ]);
+            return $this->jsonResponseService->error('User tidak ditemukan');
         }
 
         DB::beginTransaction();
@@ -213,16 +212,11 @@ class UserController extends Controller
             $user->delete();
         } catch (\Exception $e) {
             DB::rollBack();
-            return response()->json([
-                'success' => false,
-                'message' => $e->getMessage(),
-            ]);
+
+            return $this->jsonResponseService->error($e->getMessage());
         }
 
         DB::commit();
-        return response()->json([
-            'success' => true,
-            'message' => 'Berhasil menghapus user',
-        ]);
+        return $this->jsonResponseService->success('Berhasil menghapus user');
     }
 }
