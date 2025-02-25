@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\ProductCategory;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,5 +26,13 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
             'role' => 'admin',
         ]);
+
+        for ($i = 0; $i < 10; $i++) {
+            ProductCategory::create([
+                'name' => 'Category ' . $i,
+                'slug' => Str::slug('Category ' . $i),
+                'description' => 'Category ' . $i . ' description',
+            ]);
+        }
     }
 }

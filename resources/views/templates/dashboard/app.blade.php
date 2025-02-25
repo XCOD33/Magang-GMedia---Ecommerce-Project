@@ -39,6 +39,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <!--begin::Layout Themes(used by all pages)-->
     <!--end::Layout Themes-->
     <link rel="shortcut icon" href="{{ asset('assets/media/logos/favicon.ico') }}" />
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -159,6 +161,9 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
 
     <script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/crud/forms/widgets/select2.js') }}"></script>
+    <script src="{{ asset('assets/plugins/custom/ckeditor/ckeditor-classic.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/crud/file-upload/dropzonejs.js') }}"></script>
 
     <script>
         toastr.options = {

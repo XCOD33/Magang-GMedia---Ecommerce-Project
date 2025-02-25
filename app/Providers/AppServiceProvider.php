@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Services\DataTableService;
 use App\Services\JsonResponseService;
+use App\Services\ProductService;
 use App\Services\SlugService;
 use App\Services\ViewService;
 use Illuminate\Support\Facades\View;
@@ -38,6 +39,10 @@ class AppServiceProvider extends ServiceProvider
          */
         $this->app->singleton(JsonResponseService::class, function () {
             return new JsonResponseService();
+        });
+
+        $this->app->singleton(ProductService::class, function () {
+            return new ProductService();
         });
     }
 
