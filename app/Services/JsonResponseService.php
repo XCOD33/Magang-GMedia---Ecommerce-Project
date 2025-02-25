@@ -13,7 +13,7 @@ class JsonResponseService
      * @param mixed|null $data Optional data to include in the response.
      * @return \Illuminate\Http\JsonResponse
      */
-    public function success($message, $data = null): JsonResponse
+    public function success($message, $data = null, $statusCode = 200): JsonResponse
     {
         $response = [
             'success' => true,
@@ -24,7 +24,7 @@ class JsonResponseService
             $response['data'] = $data;
         }
 
-        return response()->json($response);
+        return response()->json($response, $statusCode);
     }
 
     /**
@@ -34,7 +34,7 @@ class JsonResponseService
      * @param mixed|null $data Optional data to include in the response.
      * @return \Illuminate\Http\JsonResponse
      */
-    public function error($message, $data = null): JsonResponse
+    public function error($message, $data = null, $statusCode = 400, $errors = []): JsonResponse
     {
         $response = [
             'success' => false,
@@ -45,6 +45,25 @@ class JsonResponseService
             $response['data'] = $data;
         }
 
-        return response()->json($response);
+        if (!empty($errors)) {
+            $response['errors'] = $errors;
+        }
+
+        return response()->json($response, $statusCode);
+    }
+
+    public function unauthorized($message = 'Unauthorized', $data = null): JsonResponse
+    {
+        return $this->error($message, $data, 401);
+    }
+
+    public function notFound($message = 'Not Found', $data = null): JsonResponse
+    {
+        return $this->error($message, $data, 404);
+    }
+
+    public function serverError($message = 'Server Error', $data = null): JsonResponse
+    {
+        return $this->error($message, $data, 500);
     }
 }
