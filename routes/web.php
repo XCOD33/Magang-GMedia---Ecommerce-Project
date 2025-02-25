@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VoucherController;
@@ -38,11 +39,28 @@ Route::group([
         return 'Dashboard';
     })->name('index');
 
+    // dashboard/product
+    Route::group([
+        'prefix' => 'product',
+        'as' => 'product.',
+        'controller' => ProductController::class,
+        'middleware' => ['auth', 'or:seller,admin'],
+    ], function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::post('/update/{id}', 'update')->name('update');
+        Route::post('/delete/{id}', 'destroy')->name('delete');
+
+        Route::post('/upload-temp', 'uploadTemp')->name('upload-temp');
+    });
+
     // dashboard/data-master
     Route::group([
         'prefix' => 'data-master',
         'as' => 'data-master.',
-        'middleware' => ['superadmin'],
+        'middleware' => ['admin'],
     ], function () {
         // dashboard/data-master/user
         Route::group([
@@ -117,6 +135,8 @@ Route::group([
     'as' => 'data-table.',
     'middleware' => ['auth'],
 ], function () {
+    Route::get('/product', [ProductController::class, 'dataTable'])->name('product');
+
     Route::get('/user', [UserController::class, 'dataTable'])->name('user');
     Route::get('/store', [StoreController::class, 'dataTable'])->name('store');
     Route::get('/product-category', [ProductCategoryController::class, 'dataTable'])->name('product-category');

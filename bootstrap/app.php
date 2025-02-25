@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\BuyerMiddleware;
+use App\Http\Middleware\orMiddleware;
 use App\Http\Middleware\SellerMiddleware;
 use App\Http\Middleware\SuperadminMiddleware;
 use Illuminate\Foundation\Application;
@@ -20,8 +22,10 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->alias([
             'superadmin' => SuperadminMiddleware::class,
+            'admin' => AdminMiddleware::class,
             'seller' => SellerMiddleware::class,
             'buyer' => BuyerMiddleware::class,
+            'or' => orMiddleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
