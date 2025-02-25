@@ -53,6 +53,7 @@
       22 => 'Illuminate\\View\\ViewServiceProvider',
       23 => 'App\\Providers\\AppServiceProvider',
       24 => 'Yajra\\DataTables\\DataTablesServiceProvider',
+      25 => 'Tymon\\JWTAuth\\Providers\\LaravelServiceProvider',
     ),
     'aliases' => 
     array (
@@ -107,7 +108,7 @@
   array (
     'defaults' => 
     array (
-      'guard' => 'web',
+      'guard' => 'api',
       'passwords' => 'users',
     ),
     'guards' => 
@@ -116,6 +117,16 @@
       array (
         'driver' => 'session',
         'provider' => 'users',
+      ),
+      'api' => 
+      array (
+        'driver' => 'jwt',
+        'provider' => 'users',
+      ),
+      'sanctum' => 
+      array (
+        'driver' => 'sanctum',
+        'provider' => NULL,
       ),
     ),
     'providers' => 
@@ -421,6 +432,169 @@
       'F:\\laragon\\www\\ecommerce-gmedia\\public\\storage' => 'F:\\laragon\\www\\ecommerce-gmedia\\storage\\app/public',
     ),
   ),
+  'jwt' => 
+  array (
+    'secret' => 'WwotFdsf9LabeDvLdWrvoPiWlJoV0LPKywDjykROSsZXJRhcXeB8TFnmccfMMQhG',
+    'keys' => 
+    array (
+      'public' => NULL,
+      'private' => NULL,
+      'passphrase' => NULL,
+    ),
+    'ttl' => 60,
+    'refresh_ttl' => 20160,
+    'algo' => 'HS256',
+    'required_claims' => 
+    array (
+      0 => 'iss',
+      1 => 'iat',
+      2 => 'exp',
+      3 => 'nbf',
+      4 => 'sub',
+      5 => 'jti',
+    ),
+    'persistent_claims' => 
+    array (
+    ),
+    'lock_subject' => true,
+    'leeway' => 0,
+    'blacklist_enabled' => true,
+    'blacklist_grace_period' => 0,
+    'decrypt_cookies' => false,
+    'providers' => 
+    array (
+      'jwt' => 'Tymon\\JWTAuth\\Providers\\JWT\\Lcobucci',
+      'auth' => 'Tymon\\JWTAuth\\Providers\\Auth\\Illuminate',
+      'storage' => 'Tymon\\JWTAuth\\Providers\\Storage\\Illuminate',
+    ),
+  ),
+  'l5-swagger' => 
+  array (
+    'default' => 'default',
+    'documentations' => 
+    array (
+      'default' => 
+      array (
+        'api' => 
+        array (
+          'title' => 'L5 Swagger UI',
+        ),
+        'routes' => 
+        array (
+          'api' => 'api/documentation',
+        ),
+        'paths' => 
+        array (
+          'use_absolute_path' => true,
+          'swagger_ui_assets_path' => 'vendor/swagger-api/swagger-ui/dist/',
+          'docs_json' => 'api-docs.json',
+          'docs_yaml' => 'api-docs.yaml',
+          'format_to_use_for_docs' => 'json',
+          'annotations' => 
+          array (
+            0 => 'F:\\laragon\\www\\ecommerce-gmedia\\app/Swagger',
+          ),
+        ),
+      ),
+    ),
+    'defaults' => 
+    array (
+      'routes' => 
+      array (
+        'docs' => 'docs',
+        'oauth2_callback' => 'api/oauth2-callback',
+        'middleware' => 
+        array (
+          'api' => 
+          array (
+          ),
+          'asset' => 
+          array (
+          ),
+          'docs' => 
+          array (
+          ),
+          'oauth2_callback' => 
+          array (
+          ),
+        ),
+        'group_options' => 
+        array (
+        ),
+      ),
+      'paths' => 
+      array (
+        'docs' => 'F:\\laragon\\www\\ecommerce-gmedia\\storage\\api-docs',
+        'views' => 'F:\\laragon\\www\\ecommerce-gmedia\\resources/views/vendor/l5-swagger',
+        'base' => NULL,
+        'excludes' => 
+        array (
+        ),
+      ),
+      'scanOptions' => 
+      array (
+        'default_processors_configuration' => 
+        array (
+        ),
+        'analyser' => NULL,
+        'analysis' => NULL,
+        'processors' => 
+        array (
+        ),
+        'pattern' => NULL,
+        'exclude' => 
+        array (
+        ),
+        'open_api_spec_version' => '3.0.0',
+      ),
+      'securityDefinitions' => 
+      array (
+        'securitySchemes' => 
+        array (
+          'bearerAuth' => 
+          array (
+            'type' => 'http',
+            'scheme' => 'bearer',
+            'bearerFormat' => 'JWT',
+            'description' => 'Enter JWT token',
+          ),
+        ),
+        'security' => 
+        array (
+          0 => 
+          array (
+          ),
+        ),
+      ),
+      'generate_always' => false,
+      'generate_yaml_copy' => false,
+      'proxy' => false,
+      'additional_config_url' => NULL,
+      'operations_sort' => NULL,
+      'validator_url' => NULL,
+      'ui' => 
+      array (
+        'display' => 
+        array (
+          'dark_mode' => false,
+          'doc_expansion' => 'none',
+          'filter' => true,
+        ),
+        'authorization' => 
+        array (
+          'persist_authorization' => false,
+          'oauth2' => 
+          array (
+            'use_pkce_with_authorization_code_grant' => false,
+          ),
+        ),
+      ),
+      'constants' => 
+      array (
+        'L5_SWAGGER_CONST_HOST' => 'http://ecommerce-gmedia.test',
+      ),
+    ),
+  ),
   'logging' => 
   array (
     'default' => 'stack',
@@ -653,6 +827,30 @@
       'driver' => 'database-uuids',
       'database' => 'mysql',
       'table' => 'failed_jobs',
+    ),
+  ),
+  'sanctum' => 
+  array (
+    'stateful' => 
+    array (
+      0 => 'localhost',
+      1 => 'localhost:3000',
+      2 => '127.0.0.1',
+      3 => '127.0.0.1:8000',
+      4 => '::1',
+      5 => 'ecommerce-gmedia.test',
+    ),
+    'guard' => 
+    array (
+      0 => 'web',
+    ),
+    'expiration' => NULL,
+    'token_prefix' => '',
+    'middleware' => 
+    array (
+      'authenticate_session' => 'Laravel\\Sanctum\\Http\\Middleware\\AuthenticateSession',
+      'encrypt_cookies' => 'Illuminate\\Cookie\\Middleware\\EncryptCookies',
+      'validate_csrf_token' => 'Illuminate\\Foundation\\Http\\Middleware\\ValidateCsrfToken',
     ),
   ),
   'services' => 

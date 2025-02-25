@@ -7,6 +7,66 @@ app('router')->setCompiledRoutes(
     0 => false,
     1 => 
     array (
+      '/api/documentation' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'l5-swagger.default.api',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/api/oauth2-callback' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'l5-swagger.default.oauth2_callback',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/sanctum/csrf-cookie' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'sanctum.csrf-cookie',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/livewire/update' => 
       array (
         0 => 
@@ -32,7 +92,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::sfDlblU4qSuS6fFy',
+            '_route' => 'generated::UbEkD3l9E4xLVZA0',
           ),
           1 => NULL,
           2 => 
@@ -52,7 +112,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::LejfrJygA4GsMyjv',
+            '_route' => 'generated::4mllFZuClE2urk8m',
           ),
           1 => NULL,
           2 => 
@@ -85,13 +145,109 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/api/auth/register' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'auth.register',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/api/auth/login' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'auth.login',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/api/auth/user' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'auth.user',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/api/auth/refresh' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'auth.refresh',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/api/auth/logout' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'auth.logout',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/up' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::xLZU2GexhoeEabRA',
+            '_route' => 'generated::vaSQHaRLRkBTpdK9',
           ),
           1 => NULL,
           2 => 
@@ -619,21 +775,22 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/livewire/preview\\-file/([^/]++)(*:39)|/dashboard/(?|product/(?|edit/([^/]++)(*:84)|update/([^/]++)(*:106)|delete/([^/]++)(*:129))|data\\-master/(?|user/(?|edit/([^/]++)(*:175)|update/([^/]++)(*:198)|delete/([^/]++)(*:221))|store/(?|edit/([^/]++)(*:252)|update/([^/]++)(*:275)|delete/([^/]++)(*:298))|product\\-category/(?|edit/([^/]++)(*:341)|update/([^/]++)(*:364)|delete/([^/]++)(*:387))|voucher/(?|edit/([^/]++)(*:420)|update/([^/]++)(*:443)|delete/([^/]++)(*:466))))|/category/([^/]++)(*:495)|/storage/(.*)(*:516))/?$}sDu',
+      0 => '{^(?|/d(?|ocs(?|(?:/([^/]++))?(*:32)|/asset/([^/]++)(*:54))|ashboard/(?|product/(?|edit/([^/]++)(*:98)|update/([^/]++)(*:120)|delete/([^/]++)(*:143))|data\\-master/(?|user/(?|edit/([^/]++)(*:189)|update/([^/]++)(*:212)|delete/([^/]++)(*:235))|store/(?|edit/([^/]++)(*:266)|update/([^/]++)(*:289)|delete/([^/]++)(*:312))|product\\-category/(?|edit/([^/]++)(*:355)|update/([^/]++)(*:378)|delete/([^/]++)(*:401))|voucher/(?|edit/([^/]++)(*:434)|update/([^/]++)(*:457)|delete/([^/]++)(*:480)))))|/livewire/preview\\-file/([^/]++)(*:524)|/category/([^/]++)(*:550)|/storage/(.*)(*:571))/?$}sDu',
     ),
     3 => 
     array (
-      39 => 
+      32 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'livewire.preview-file',
+            '_route' => 'l5-swagger.default.docs',
+            'jsonFile' => NULL,
           ),
           1 => 
           array (
-            0 => 'filename',
+            0 => 'jsonFile',
           ),
           2 => 
           array (
@@ -646,7 +803,30 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      84 => 
+      54 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'l5-swagger.default.asset',
+          ),
+          1 => 
+          array (
+            0 => 'asset',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      98 => 
       array (
         0 => 
         array (
@@ -669,7 +849,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      106 => 
+      120 => 
       array (
         0 => 
         array (
@@ -691,7 +871,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      129 => 
+      143 => 
       array (
         0 => 
         array (
@@ -713,7 +893,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      175 => 
+      189 => 
       array (
         0 => 
         array (
@@ -736,7 +916,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      198 => 
+      212 => 
       array (
         0 => 
         array (
@@ -758,7 +938,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      221 => 
+      235 => 
       array (
         0 => 
         array (
@@ -780,7 +960,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      252 => 
+      266 => 
       array (
         0 => 
         array (
@@ -803,7 +983,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      275 => 
+      289 => 
       array (
         0 => 
         array (
@@ -825,7 +1005,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      298 => 
+      312 => 
       array (
         0 => 
         array (
@@ -847,7 +1027,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      341 => 
+      355 => 
       array (
         0 => 
         array (
@@ -870,7 +1050,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      364 => 
+      378 => 
       array (
         0 => 
         array (
@@ -892,7 +1072,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      387 => 
+      401 => 
       array (
         0 => 
         array (
@@ -914,7 +1094,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      420 => 
+      434 => 
       array (
         0 => 
         array (
@@ -937,7 +1117,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      443 => 
+      457 => 
       array (
         0 => 
         array (
@@ -959,7 +1139,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      466 => 
+      480 => 
       array (
         0 => 
         array (
@@ -981,7 +1161,30 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      495 => 
+      524 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'livewire.preview-file',
+          ),
+          1 => 
+          array (
+            0 => 'filename',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      550 => 
       array (
         0 => 
         array (
@@ -1004,7 +1207,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      516 => 
+      571 => 
       array (
         0 => 
         array (
@@ -1042,6 +1245,195 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
+    'l5-swagger.default.api' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'api/documentation',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'L5Swagger\\Http\\Middleware\\Config',
+        ),
+        'l5-swagger.documentation' => 'default',
+        'as' => 'l5-swagger.default.api',
+        'uses' => '\\L5Swagger\\Http\\Controllers\\SwaggerController@api',
+        'controller' => '\\L5Swagger\\Http\\Controllers\\SwaggerController@api',
+        'namespace' => 'L5Swagger',
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'l5-swagger.default.docs' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'docs/{jsonFile?}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'L5Swagger\\Http\\Middleware\\Config',
+        ),
+        'l5-swagger.documentation' => 'default',
+        'as' => 'l5-swagger.default.docs',
+        'uses' => '\\L5Swagger\\Http\\Controllers\\SwaggerController@docs',
+        'controller' => '\\L5Swagger\\Http\\Controllers\\SwaggerController@docs',
+        'namespace' => 'L5Swagger',
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'l5-swagger.default.asset' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'docs/asset/{asset}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'L5Swagger\\Http\\Middleware\\Config',
+        ),
+        'l5-swagger.documentation' => 'default',
+        'as' => 'l5-swagger.default.asset',
+        'uses' => '\\L5Swagger\\Http\\Controllers\\SwaggerAssetController@index',
+        'controller' => '\\L5Swagger\\Http\\Controllers\\SwaggerAssetController@index',
+        'namespace' => 'L5Swagger',
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'l5-swagger.default.oauth2_callback' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'api/oauth2-callback',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'L5Swagger\\Http\\Middleware\\Config',
+        ),
+        'l5-swagger.documentation' => 'default',
+        'as' => 'l5-swagger.default.oauth2_callback',
+        'uses' => '\\L5Swagger\\Http\\Controllers\\SwaggerController@oauth2Callback',
+        'controller' => '\\L5Swagger\\Http\\Controllers\\SwaggerController@oauth2Callback',
+        'namespace' => 'L5Swagger',
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'sanctum.csrf-cookie' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'sanctum/csrf-cookie',
+      'action' => 
+      array (
+        'uses' => 'Laravel\\Sanctum\\Http\\Controllers\\CsrfCookieController@show',
+        'controller' => 'Laravel\\Sanctum\\Http\\Controllers\\CsrfCookieController@show',
+        'namespace' => NULL,
+        'prefix' => 'sanctum',
+        'where' => 
+        array (
+        ),
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'sanctum.csrf-cookie',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'livewire.update' => 
     array (
       'methods' => 
@@ -1073,7 +1465,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::sfDlblU4qSuS6fFy' => 
+    'generated::UbEkD3l9E4xLVZA0' => 
     array (
       'methods' => 
       array (
@@ -1085,7 +1477,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile',
         'controller' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile',
-        'as' => 'generated::sfDlblU4qSuS6fFy',
+        'as' => 'generated::UbEkD3l9E4xLVZA0',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1101,7 +1493,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::LejfrJygA4GsMyjv' => 
+    'generated::4mllFZuClE2urk8m' => 
     array (
       'methods' => 
       array (
@@ -1113,7 +1505,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps',
         'controller' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps',
-        'as' => 'generated::LejfrJygA4GsMyjv',
+        'as' => 'generated::4mllFZuClE2urk8m',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1184,7 +1576,193 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::xLZU2GexhoeEabRA' => 
+    'auth.register' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'api/auth/register',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'guest',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Api\\AuthController@register',
+        'controller' => 'App\\Http\\Controllers\\Api\\AuthController@register',
+        'as' => 'auth.register',
+        'namespace' => NULL,
+        'prefix' => 'api/auth',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'auth.login' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'api/auth/login',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'guest',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Api\\AuthController@login',
+        'controller' => 'App\\Http\\Controllers\\Api\\AuthController@login',
+        'as' => 'auth.login',
+        'namespace' => NULL,
+        'prefix' => 'api/auth',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'auth.user' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'api/auth/user',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'jwt',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Api\\AuthController@me',
+        'controller' => 'App\\Http\\Controllers\\Api\\AuthController@me',
+        'as' => 'auth.user',
+        'namespace' => NULL,
+        'prefix' => 'api/auth',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'auth.refresh' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'api/auth/refresh',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'jwt',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Api\\AuthController@refresh',
+        'controller' => 'App\\Http\\Controllers\\Api\\AuthController@refresh',
+        'as' => 'auth.refresh',
+        'namespace' => NULL,
+        'prefix' => 'api/auth',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'auth.logout' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'api/auth/logout',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'jwt',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Api\\AuthController@logout',
+        'controller' => 'App\\Http\\Controllers\\Api\\AuthController@logout',
+        'as' => 'auth.logout',
+        'namespace' => NULL,
+        'prefix' => 'api/auth',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::vaSQHaRLRkBTpdK9' => 
     array (
       'methods' => 
       array (
@@ -1212,8 +1790,8 @@ app('router')->setCompiledRoutes(
                     return response(\\Illuminate\\Support\\Facades\\View::file(\'F:\\\\laragon\\\\www\\\\ecommerce-gmedia\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Configuration\'.\'/../resources/health-up.blade.php\', [
                         \'exception\' => $exception,
                     ]), status: $exception ? 500 : 200);
-                }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000007f10000000000000000";}}',
-        'as' => 'generated::xLZU2GexhoeEabRA',
+                }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"000000000000086a0000000000000000";}}',
+        'as' => 'generated::vaSQHaRLRkBTpdK9',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1395,7 +1973,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:47:"function () {
         return \'Dashboard\';
-    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000007f60000000000000000";}}',
+    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000086d0000000000000000";}}',
         'as' => 'dashboard.index',
         'namespace' => NULL,
         'prefix' => '/dashboard',
@@ -2823,7 +3401,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:46:"function () {
         return \'Category\';
-    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000008200000000000000000";}}',
+    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000089e0000000000000000";}}',
         'as' => 'category.index',
         'namespace' => NULL,
         'prefix' => '/category',
@@ -2861,7 +3439,7 @@ app('router')->setCompiledRoutes(
                         $config,
                         $isProduction
                     ))($request, $path);
-                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"00000000000007f50000000000000000";}}',
+                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"000000000000086c0000000000000000";}}',
         'as' => 'storage.local',
       ),
       'fallback' => false,

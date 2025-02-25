@@ -8,8 +8,21 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Parables\Cuid\CuidAsPrimaryKey;
 use Parables\Cuid\GeneratesCuid;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable
+/**
+ * @OA\Schema(
+ *     schema="User",
+ *     required={"email", "name"},
+ *     @OA\Property(property="id", type="string", format="cuid", example="cuid123456789"),
+ *     @OA\Property(property="name", type="string", maxLength=32, example="John Doe"),
+ *     @OA\Property(property="email", type="string", format="email", example="user@example.com"),
+ *     @OA\Property(property="role", type="string", enum={"admin", "seller", "buyer"}, example="buyer"),
+ *     @OA\Property(property="created_at", type="string", format="date-time"),
+ *     @OA\Property(property="updated_at", type="string", format="date-time")
+ * )
+ */
+class User extends Authenticatable implements JWTSubject
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable, GeneratesCuid, CuidAsPrimaryKey;
@@ -52,6 +65,16 @@ class User extends Authenticatable
     public static function cuidColumn(): string
     {
         return 'id';
+    }
+
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
     }
 
     public function transactions()
