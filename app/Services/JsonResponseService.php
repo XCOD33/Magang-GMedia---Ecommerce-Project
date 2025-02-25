@@ -34,7 +34,7 @@ class JsonResponseService
      * @param mixed|null $data Optional data to include in the response.
      * @return \Illuminate\Http\JsonResponse
      */
-    public function error($message, $data = null, $statusCode = 400): JsonResponse
+    public function error($message, $data = null, $statusCode = 400, $errors = []): JsonResponse
     {
         $response = [
             'success' => false,
@@ -43,6 +43,10 @@ class JsonResponseService
 
         if ($data !== null) {
             $response['data'] = $data;
+        }
+
+        if (!empty($errors)) {
+            $response['errors'] = $errors;
         }
 
         return response()->json($response, $statusCode);

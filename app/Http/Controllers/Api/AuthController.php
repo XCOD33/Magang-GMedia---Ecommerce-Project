@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\RegisterRequest;
+use App\Models\User;
 use App\Services\JsonResponseService;
 use Illuminate\Http\Request;
 
@@ -34,6 +36,16 @@ class AuthController extends Controller
         }
 
         return $this->respondWithToken($token);
+    }
+
+    public function register(RegisterRequest $request)
+    {
+        try {
+            $user = User::create($request->all());
+        } catch (\Exception $e) {
+            return $this->jsonResponseService->error($e->getMessage(), null, 500);
+        }
+        return $this->jsonResponseService->success('User created successfully', $user);
     }
 
     public function me()
