@@ -36,7 +36,7 @@ Route::group([
 ], function () {
     // dashboard/index
     Route::get('/', function () {
-        return 'Dashboard';
+        return view('pages.dashboard.index');
     })->name('index');
 
     // dashboard/product

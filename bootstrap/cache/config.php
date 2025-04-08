@@ -108,7 +108,7 @@
   array (
     'defaults' => 
     array (
-      'guard' => 'api',
+      'guard' => 'web',
       'passwords' => 'users',
     ),
     'guards' => 
@@ -116,11 +116,6 @@
       'web' => 
       array (
         'driver' => 'session',
-        'provider' => 'users',
-      ),
-      'api' => 
-      array (
-        'driver' => 'jwt',
         'provider' => 'users',
       ),
       'sanctum' => 
