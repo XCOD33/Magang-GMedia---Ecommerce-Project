@@ -7,6 +7,6 @@ Route::group([
     'as' => 'data-master.',
     'middleware' => ['jwt', 'role:admin']
 ], function () {
-    require __DIR__ . '/product-category.php';
+    // require __DIR__ . '/product-category.php';
     // require route lainnya
 });

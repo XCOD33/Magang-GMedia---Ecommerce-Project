@@ -10,6 +10,7 @@
                 <th>Slug</th>
                 <th>Deskripsi</th>
                 <th>Total Product</th>
+                <th>Gambar Unggulan</th>
                 <th><i class="fas fa-cog text-dark"></i></th>
             </tr>
         </thead>
@@ -51,6 +52,14 @@
                     data: 'total_product',
                     name: 'total_product',
                     className: 'text-center',
+                },
+                {
+                    data: 'image',
+                    name: 'image',
+                    className: 'text-center',
+                    render: function(data, type, row) {
+                        return `<img src="${data}" alt="Image" class="img-fluid" width="100">`;
+                    }
                 },
                 {
                     data: 'action',

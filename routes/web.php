@@ -36,7 +36,7 @@ Route::group([
 ], function () {
     // dashboard/index
     Route::get('/', function () {
-        return 'Dashboard';
+        return view('pages.dashboard.index');
     })->name('index');
 
     // dashboard/product
@@ -102,6 +102,8 @@ Route::group([
             Route::get('/edit/{id}', 'edit')->name('edit');
             Route::post('/update/{id}', 'update')->name('update');
             Route::post('/delete/{id}', 'destroy')->name('delete');
+
+            Route::post('/upload-image', 'uploadImage')->name('upload-image');
         });
 
         // dashboard/data-master/voucher

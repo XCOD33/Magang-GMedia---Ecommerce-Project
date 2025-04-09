@@ -19,24 +19,24 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
 
         // api
-        api: __DIR__ . '/../routes/api.php',
-        apiPrefix: '/api',
+        // api: __DIR__ . '/../routes/api.php',
+        // apiPrefix: '/api',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        // $middleware->redirectGuestsTo(fn(Request $request) => route('auth'));
-        // $middleware->redirectUsersTo(fn(Request $request) => route('dashboard.index'));
-
-        // $middleware->alias([
-        //     'superadmin' => SuperadminMiddleware::class,
-        //     'admin' => AdminMiddleware::class,
-        //     'seller' => SellerMiddleware::class,
-        //     'buyer' => BuyerMiddleware::class,
-        //     'or' => orMiddleware::class,
-        // ]);
+        $middleware->redirectGuestsTo(fn(Request $request) => route('auth'));
+        $middleware->redirectUsersTo(fn(Request $request) => route('dashboard.index'));
 
         $middleware->alias([
-            'jwt' => JwtMiddleware::class,
+            'superadmin' => SuperadminMiddleware::class,
+            'admin' => AdminMiddleware::class,
+            'seller' => SellerMiddleware::class,
+            'buyer' => BuyerMiddleware::class,
+            'or' => orMiddleware::class,
         ]);
+
+        // $middleware->alias([
+        //     'jwt' => JwtMiddleware::class,
+        // ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
