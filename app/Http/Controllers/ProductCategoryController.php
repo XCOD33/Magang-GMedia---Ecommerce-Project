@@ -45,7 +45,11 @@ class ProductCategoryController extends Controller
                 return '<span class="badge bg-success text-white">' . $q->products->count() . '</span>';
             })
             ->editColumn('image', function ($q) {
-                return Storage::url('product-category/' . $q->image);
+                if ($q->image !== null) {
+                    return Storage::url('product-category/' . $q->image);
+                }
+
+                return asset('assets/media/images/no-image.png');
             })
             ->addColumn('action', function ($q) {
                 return $this->dataTableService->generateActionButtons(
@@ -219,12 +223,41 @@ class ProductCategoryController extends Controller
             return redirect()->back()->withInput();
         }
 
+        // Cek apakah ada gambar baru yang diupload
+        $imageName = $productCategory->image; // Default: gambar yang sudah ada
+
+        if (session()->has('temp_product_category_image')) {
+            // Hapus gambar lama jika ada
+            if ($productCategory->image && Storage::disk('public')->exists('product-category/' . $productCategory->image)) {
+                Storage::disk('public')->delete('product-category/' . $productCategory->image);
+            }
+
+            // Gunakan gambar baru
+            $imageName = session('temp_product_category_image');
+
+            // Pindahkan dari folder temp ke folder tujuan
+            if (Storage::disk('public')->exists('temp/' . $imageName)) {
+                // Baca konten file
+                $fileContent = Storage::disk('public')->get('temp/' . $imageName);
+
+                // Simpan ke lokasi baru
+                Storage::disk('public')->put('product-category/' . $imageName, $fileContent);
+
+                // Hapus file temporary
+                Storage::disk('public')->delete('temp/' . $imageName);
+            }
+
+            // Hapus dari session
+            session()->forget('temp_product_category_image');
+        }
+
         DB::beginTransaction();
         try {
             $productCategory->update([
                 'slug' => $this->slugService->createUniqueSlug($request->name, ProductCategory::class),
                 'name' => $request->name,
                 'description' => $request->description,
+                'image' => $imageName,
             ]);
         } catch (\Exception $e) {
             DB::rollBack();
@@ -250,6 +283,11 @@ class ProductCategoryController extends Controller
 
         DB::beginTransaction();
         try {
+            // Hapus gambar jika ada
+            if ($productCategory->image && Storage::disk('public')->exists('product-category/' . $productCategory->image)) {
+                Storage::disk('public')->delete('product-category/' . $productCategory->image);
+            }
+
             $productCategory->delete();
         } catch (\Exception $e) {
             DB::rollBack();
