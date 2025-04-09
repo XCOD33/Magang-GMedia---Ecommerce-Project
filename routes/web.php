@@ -102,6 +102,8 @@ Route::group([
             Route::get('/edit/{id}', 'edit')->name('edit');
             Route::post('/update/{id}', 'update')->name('update');
             Route::post('/delete/{id}', 'destroy')->name('delete');
+
+            Route::post('/upload-image', 'uploadImage')->name('upload-image');
         });
 
         // dashboard/data-master/voucher

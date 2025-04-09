@@ -92,7 +92,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::pTQoGu9uQWC8a2AQ',
+            '_route' => 'generated::NwZJLT9sEkVNDgfh',
           ),
           1 => NULL,
           2 => 
@@ -112,7 +112,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::jD1K3yS9kYSg6U8Y',
+            '_route' => 'generated::6GR2H6TelrzQDawn',
           ),
           1 => NULL,
           2 => 
@@ -151,7 +151,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::1Y6cP1kPlYZZRIxk',
+            '_route' => 'generated::4Bx7whsBkFmgB6Ah',
           ),
           1 => NULL,
           2 => 
@@ -505,6 +505,25 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'dashboard.data-master.product-category.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/dashboard/data-master/product-category/upload-image' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dashboard.data-master.product-category.upload-image',
           ),
           1 => NULL,
           2 => 
@@ -1369,7 +1388,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::pTQoGu9uQWC8a2AQ' => 
+    'generated::NwZJLT9sEkVNDgfh' => 
     array (
       'methods' => 
       array (
@@ -1381,7 +1400,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile',
         'controller' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile',
-        'as' => 'generated::pTQoGu9uQWC8a2AQ',
+        'as' => 'generated::NwZJLT9sEkVNDgfh',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1397,7 +1416,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::jD1K3yS9kYSg6U8Y' => 
+    'generated::6GR2H6TelrzQDawn' => 
     array (
       'methods' => 
       array (
@@ -1409,7 +1428,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps',
         'controller' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps',
-        'as' => 'generated::jD1K3yS9kYSg6U8Y',
+        'as' => 'generated::6GR2H6TelrzQDawn',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1480,7 +1499,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::1Y6cP1kPlYZZRIxk' => 
+    'generated::4Bx7whsBkFmgB6Ah' => 
     array (
       'methods' => 
       array (
@@ -1509,7 +1528,7 @@ app('router')->setCompiledRoutes(
                         \'exception\' => $exception,
                     ]), status: $exception ? 500 : 200);
                 }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"000000000000086b0000000000000000";}}',
-        'as' => 'generated::1Y6cP1kPlYZZRIxk',
+        'as' => 'generated::4Bx7whsBkFmgB6Ah',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2682,6 +2701,44 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'dashboard.data-master.product-category.upload-image' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'dashboard/data-master/product-category/upload-image',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ProductCategoryController@uploadImage',
+        'controller' => 'App\\Http\\Controllers\\ProductCategoryController@uploadImage',
+        'as' => 'dashboard.data-master.product-category.upload-image',
+        'namespace' => NULL,
+        'prefix' => 'dashboard/data-master/product-category',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'dashboard.data-master.voucher.index' => 
     array (
       'methods' => 
@@ -3119,7 +3176,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:46:"function () {
         return \'Category\';
-    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000089a0000000000000000";}}',
+    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000089b0000000000000000";}}',
         'as' => 'category.index',
         'namespace' => NULL,
         'prefix' => '/category',

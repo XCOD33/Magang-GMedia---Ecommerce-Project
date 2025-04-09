@@ -8,6 +8,7 @@ use App\Services\SlugService;
 use App\Services\JsonResponseService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class ProductCategoryController extends Controller
@@ -42,6 +43,9 @@ class ProductCategoryController extends Controller
             })
             ->addColumn('total_product', function ($q) {
                 return '<span class="badge bg-success text-white">' . $q->products->count() . '</span>';
+            })
+            ->editColumn('image', function ($q) {
+                return Storage::url('product-category/' . $q->image);
             })
             ->addColumn('action', function ($q) {
                 return $this->dataTableService->generateActionButtons(
@@ -93,12 +97,33 @@ class ProductCategoryController extends Controller
             return redirect()->back()->withInput();
         }
 
+        $imageName = null;
+        if (session()->has('temp_product_category_image')) {
+            $imageName = session('temp_product_category_image');
+
+            // Pindahkan dari folder temp ke folder tujuan menggunakan Storage
+            if (Storage::disk('public')->exists('temp/' . $imageName)) {
+                // Baca konten file
+                $fileContent = Storage::disk('public')->get('temp/' . $imageName);
+
+                // Simpan ke lokasi baru
+                Storage::disk('public')->put('product-category/' . $imageName, $fileContent);
+
+                // Hapus file temporary
+                Storage::disk('public')->delete('temp/' . $imageName);
+            }
+
+            // Hapus dari session
+            session()->forget('temp_product_category_image');
+        }
+
         DB::beginTransaction();
         try {
             ProductCategory::create([
                 'slug' => $this->slugService->createUniqueSlug($request->name, ProductCategory::class),
                 'name' => $request->name,
                 'description' => $request->description,
+                'image' => $imageName,
             ]);
         } catch (\Exception $e) {
             DB::rollBack();
@@ -110,6 +135,40 @@ class ProductCategoryController extends Controller
         toastr()->success('Berhasil menambahkan kategori produk baru');
 
         return redirect()->route('dashboard.data-master.product-category.index');
+    }
+
+    public function uploadImage(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:5000',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()->first()], 400);
+        }
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+
+            // Simpan file sementara menggunakan Storage
+            $path = Storage::disk('public')->putFileAs(
+                'temp',
+                $image,
+                $imageName
+            );
+
+            // Simpan nama file di session
+            session(['temp_product_category_image' => $imageName]);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Gambar berhasil diunggah',
+                'filename' => $imageName
+            ]);
+        }
+
+        return response()->json(['error' => 'Gagal mengunggah gambar'], 400);
     }
 
     /**
